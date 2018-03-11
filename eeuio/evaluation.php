@@ -69,7 +69,7 @@
 					<li><a href="news-dashboard.html"><span class="title">News Portal</span></a></li>
 				</ul>
 			</li>
-			<li><a href="users.html"><i class="icon-gauge"></i><span class="title">Usuarios</span></a>
+			<li><a href="users.php"><i class="icon-users"></i><span class="title">Usuarios</span></a>
 			</li>
 			<li class="has-sub"><a href="collapsed-sidebar.html"><i class="icon-layout"></i><span class="title">Layouts</span></a>
 				<ul class="nav collapse">
@@ -214,17 +214,17 @@
 		</ul>
 		<!-- /main navigation -->
 
-		
+
   </div>
   <!-- /page sidebar -->
 	<!-- Main content -->
 	<div class="main-content">
-			
-			
-			
+
+
+
 	  </div>
 	  <!-- /main content -->
-	  
+
 
 </body>
 
@@ -683,16 +683,16 @@ include 'connection.php';
 echo '
 <h1 class="page-title">Lista de Evaluaciones</h1>
 <!-- Breadcrumb -->
-<ol class="breadcrumb breadcrumb-2"> 
-	<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li> 
-	<li><a href="evaluation.php">Evaluaciones</a></li> 
+<ol class="breadcrumb breadcrumb-2">
+	<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+	<li><a href="evaluation.php">Evaluaciones</a></li>
 </ol>
 <div class="row">
 	<div class="col-lg-12 animatedParent animateOnce z-index-50">
 		<div class="panel panel-default animated fadeInUp">
 			<div class="panel-heading clearfix">
 				<h3 class="panel-title">Evaluaciones realizadas</h3>
-				<ul class="panel-tool-options"> 
+				<ul class="panel-tool-options">
 					<li><a data-rel="collapse" href="#"><i class="icon-down-open"></i></a></li>
 					<li><a data-rel="reload" href="#"><i class="icon-arrows-ccw"></i></a></li>
 					<li><a data-rel="close" href="#"><i class="icon-cancel"></i></a></li>
