@@ -1,16 +1,17 @@
 <?php
+
 include 'dbconnection.php';
 include 'redirect.php';
 
+
 if($_POST){
-  $password=$_POST["password"];
+  $id=$_POST["id"];
   $emailaddress=$_POST["emailaddress"];
   $ci=$_POST["ci"];
   $firstname=$_POST["firstname"];
   $lastname=$_POST["lastname"];
 
-  $sql = "INSERT INTO USUARIO (USU_PASSWORD, USU_EMAIL, USU_CEDULA, USU_ROL, USU_NOMBRES, USU_APELLIDOS)
-  VALUES (MD5('".$password."'), '".$emailaddress."', '".$ci."', 'Estudiante', '".$firstname."', '".$lastname."' )";
+  $sql = "UPDATE USUARIO SET USU_EMAIL='".$emailaddress."', USU_NOMBRES='".$firstname."', USU_APELLIDOS='".$lastname."' WHERE USU_CODIGO='".$id."'";
 
   if ($mysqli->query($sql) === TRUE) {
       redirect('users.php');
@@ -19,7 +20,8 @@ if($_POST){
   }
 
   $mysqli->close();
-
 }
+
+
 
 ?>

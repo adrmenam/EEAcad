@@ -352,35 +352,37 @@ $(document).ready(function(){
 	<div class="header-secondary row gray-bg">
 		<div class="col-lg-12">
 			<div class="page-heading clearfix">
-				<h1 class="page-title pull-left">Usuarios</h1><button type="button" class="btn btn-primary btn-sm btn-add" data-toggle="modal" data-target="#modal-1">NUEVO</button>
+				<h1 class="page-title pull-left">Usuarios</h1>
 			</div>
 			<!-- Breadcrumb -->
 			<ol class="breadcrumb breadcrumb-2">
 				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-				<li class="active"><strong>Users</strong></li>
+				<li><a href="users.php">Usuarios</a></li>
+        <li class="active"><strong>Modificar Usuario</strong></li>
 			</ol>
-			<div class="tab-wrapper clearfix">
-        <!--
+<!--
+      <div class="tab-wrapper clearfix">
+
         <ul class="nav nav-pills nav-pills-default pull-left">
 				  <li role="presentation"><a href="simple-view.html">STYLE 1</a></li>
 				  <li role="presentation"><a href="cards-view.html">STYLE 2</a></li>
 				  <li class="active" role="presentation"><a href="strip-view.html">STYLE 3</a></li>
 				  <li role="presentation"><a href="table-view.html">STYLE 4</a></li>
 				</ul>
-        -->
+
 				<ul class="nav nav-pills nav-icons pull-right">
-				  <!--<li role="presentation"><a href="#"><i class="icon-layout"></i></a></li>-->
-				  <!--<li class="active" role="presentation"><a href="#"><i class="icon-list"></i></a></li>-->
+				  <li role="presentation"><a href="#"><i class="icon-layout"></i></a></li>
+				  <li class="active" role="presentation"><a href="#"><i class="icon-list"></i></a></li>
 				  <li role="presentation"><a href="#" class="toggle-filter" data-block-id="filter-box"><i class="fa fa-filter"></i></a></li>
 				</ul>
 			</div>
-
+-->
 		</div>
 	</div>
 	<!-- /secondary header -->
 
 	<!-- Filter wrapper -->
-
+<!--
   <div class="row filter-wrapper visible-box" id="filter-box">
 		<div class="col-lg-12">
 			<div class="filter-header">
@@ -392,7 +394,7 @@ $(document).ready(function(){
 					<label class="form-label">Buscar</label>
 					<input type="text" id="filterusers" placeholder="Búsqueda por ID, nombre, cédula o correo." class="form-control" size="100px">
 				</div>
-				<!--<div class="form-group">
+				<div class="form-group">
 					<label class="form-label">Member Since</label>
 					<select class="select2 form-control">
 						<option>2008</option>
@@ -419,15 +421,15 @@ $(document).ready(function(){
 				</div>
 				<div class="form-group filter-btn">
 					<button class="btn btn-default">Filter</button>
-				</div>-->
+				</div>
 			</form>
 		</div>
 	</div>
-
+-->
 	<!-- /filter wrapper -->
 
 	<!-- Main content -->
-	<div class="main-content">
+	<div class="main-content" style="margin-top: -40px;">
 		<!--
     <div class="row datatable-wrapper form-inline">
 			<div class="col-lg-12">
@@ -468,43 +470,65 @@ $(document).ready(function(){
 		<div class="animatedParent animateOnce z-index-50">
 			<div class="table-responsive indent-row animated fadeInUp">
         <!--<input type="text" id="filterusers" placeholder="Separate by commas...">-->
-        <table class="table table-users table-unbordered table-hover table-separate">
-					<tbody id="tableusers">
+
+
         <?php
         include 'dbconnection.php';
-        $res = $mysqli->query($select_users);
-
-
+        include 'redirect.php';
+        if($_GET){
+          $ci=$_GET["ci"];
+          $sql='SELECT * FROM USUARIO WHERE USU_CEDULA='.$ci;
+          $res = $mysqli->query($sql);
           while($row = $res->fetch_object()){
-            echo '<tr>';
-						//echo '<td class="size-40"><div class="form-checkbox"><input type="checkbox" name="name1" value="value1"> <span class="check"><i class="fa fa-check"></i></span></div></td>';
-            if($row->USU_ROL == 'Estudiante'){
-              echo '<td class="size-80"><img class="avatar img-circle" src="images/student.jpg" alt="" title=""></td>';
-            }else{
-              echo '<td class="size-80"><img class="avatar img-circle" src="images/admin.png" alt="" title=""></td>';
-            }
-            echo '<td>'.$row->USU_CODIGO.'</td>';
-            echo '<td><strong>'.$row->USU_NOMBRES.' '.$row->USU_APELLIDOS.'</strong></td>';
-            echo '<td>'.$row->USU_CEDULA.'</td>';
-            echo '<td>'.$row->USU_EMAIL.'</td>';
-            echo '<td class="text-center"><span class="badge badge-bordered">'.$row->USU_ROL.'</span></td>';
-            echo '<td class="text-center size-80">
-              <div class="dropdown">
-                <a href="#/" data-toggle="dropdown" class="more-link"><i class="icon-dot-3 ellipsis-icon"></i></a>
-                <ul class="dropdown-menu dropdown-menu-right">
-                  <li><a href="resetpasswordform.php?ci='.$row->USU_CEDULA.'">Resetear contraseña</a></li>
-                  <li><a href="updateuserform.php?ci='.$row->USU_CEDULA.'" >Editar</a></li>
-                  <li><a href="deleteuser.php?ci='.$row->USU_CEDULA.'">Eliminar</a></li>
-                </ul>
-              </div>
-            </td>
-            </tr>';
+            echo '<!--Basic Modal-->
+
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" hidden>&times;</span></button>
+                    <h4 class="modal-title">Modificar Usuario</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form id="updateuser" method="post" action="updateuser.php">
+                      <div class="form-group" hidden>
+                      <label for="id">ID</label>
+                      <input type="text" maxlength="10" class="form-control" id="id" name="id" placeholder="ID" value="'.$row->USU_CODIGO.'">
+                      </div>
+                      <div class="form-group">
+                      <label for="ci">Cédula</label>
+                      <input type="text" maxlength="10" class="form-control" id="ci" name="ci" placeholder="Cédula de Identidad" readonly value="'.$row->USU_CEDULA.'">
+                      </div>
+                       <div class="form-group">
+                       <label for="emailaddress">Email</label>
+                       <input type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Email" value="'.$row->USU_EMAIL.'">
+                       </div>
+                       <div class="form-group">
+                       <label for="firstname">Nombres</label>
+                       <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Nombres" value="'.$row->USU_NOMBRES.'">
+                       </div>
+                       <div class="form-group">
+                       <label for="lastname">Apellidos</label>
+                       <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellidos" value="'.$row->USU_APELLIDOS.'">
+                       </div>
+
+
+                   </form>
+                  </div>
+                  <div class="modal-footer">
+                    <a class="btn btn-default" href="users.php">Close</a>
+                    <button type="submit" form="updateuser" class="btn btn-primary">Guardar</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+
+            <!--End Basic Modal-->';
 
           }
+        }
+
 
         ?>
-          </tbody>
-        </table>
+
 			</div>
 		</div>
 
