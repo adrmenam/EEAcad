@@ -83,7 +83,8 @@ $(document).ready(function(){
 					<li><a href="news-dashboard.html"><span class="title">News Portal</span></a></li>
 				</ul>
 			</li>
-      <li class="active"><a href="users.php"><i class="icon-users"></i><span class="title">Usuarios</span></a>
+			<li class="active"><a href="users.php"><i class="icon-users"></i><span class="title">Usuarios</span></a>
+			<li ><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
 			<li class="has-sub"><a href="collapsed-sidebar.html"><i class="icon-layout"></i><span class="title">Layouts</span></a>
 				<ul class="nav collapse">
 					<li><a href="collapsed-sidebar.html"><span class="title">Collapsed Sidebar</span></a></li>
