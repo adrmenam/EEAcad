@@ -530,7 +530,7 @@
            </div>
            <div class="form-group">
            <label for="ci">Cédula</label>
-           <input type="number" class="form-control" id="ci" name="ci" placeholder="Cédula de Identidad">
+           <input type="text" maxlength="10" class="form-control" id="ci" name="ci" placeholder="Cédula de Identidad">
            </div>
 
        </form>
