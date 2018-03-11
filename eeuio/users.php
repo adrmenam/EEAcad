@@ -42,6 +42,21 @@
       <script src="js/respond.min.js"></script>
 <![endif]-->
 
+
+<!--Load JQuery-->
+<script src="js/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#filterusers").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#tableusers tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
 </head>
 <body>
 
@@ -343,38 +358,40 @@
 				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
 				<li class="active"><strong>Users</strong></li>
 			</ol>
-			<!--<div class="tab-wrapper clearfix">
-				<ul class="nav nav-pills nav-pills-default pull-left">
+			<div class="tab-wrapper clearfix">
+        <!--
+        <ul class="nav nav-pills nav-pills-default pull-left">
 				  <li role="presentation"><a href="simple-view.html">STYLE 1</a></li>
 				  <li role="presentation"><a href="cards-view.html">STYLE 2</a></li>
 				  <li class="active" role="presentation"><a href="strip-view.html">STYLE 3</a></li>
 				  <li role="presentation"><a href="table-view.html">STYLE 4</a></li>
 				</ul>
+        -->
 				<ul class="nav nav-pills nav-icons pull-right">
-				  <li role="presentation"><a href="#"><i class="icon-layout"></i></a></li>
-				  <li class="active" role="presentation"><a href="#"><i class="icon-list"></i></a></li>
+				  <!--<li role="presentation"><a href="#"><i class="icon-layout"></i></a></li>-->
+				  <!--<li class="active" role="presentation"><a href="#"><i class="icon-list"></i></a></li>-->
 				  <li role="presentation"><a href="#" class="toggle-filter" data-block-id="filter-box"><i class="fa fa-filter"></i></a></li>
 				</ul>
 			</div>
-      -->
+
 		</div>
 	</div>
 	<!-- /secondary header -->
 
 	<!-- Filter wrapper -->
-	<!--
+
   <div class="row filter-wrapper visible-box" id="filter-box">
 		<div class="col-lg-12">
 			<div class="filter-header">
 				<button aria-label="Close" class="close toggle-filter" type="button" data-block-id="filter-box"><i class="icon-cancel"></i></button>
-				<h3 class="title">Filter Members</h3>
+				<h3 class="title">Filtro de Usuarios</h3>
 			</div>
 			<form class="form-inline">
 				<div class="form-group">
-					<label class="form-label">Keywords</label>
-					<input type="text" placeholder="Separate by commas..." class="form-control">
+					<label class="form-label">Buscar</label>
+					<input type="text" id="filterusers" placeholder="Búsqueda por ID, nombre, cédula o correo." class="form-control" size="100px">
 				</div>
-				<div class="form-group">
+				<!--<div class="form-group">
 					<label class="form-label">Member Since</label>
 					<select class="select2 form-control">
 						<option>2008</option>
@@ -401,11 +418,11 @@
 				</div>
 				<div class="form-group filter-btn">
 					<button class="btn btn-default">Filter</button>
-				</div>
+				</div>-->
 			</form>
 		</div>
 	</div>
-  -->
+
 	<!-- /filter wrapper -->
 
 	<!-- Main content -->
@@ -447,15 +464,17 @@
 			</div>
 		</div>-->
 
+
 		<div class="animatedParent animateOnce z-index-50">
 			<div class="table-responsive indent-row animated fadeInUp">
+        <!--<input type="text" id="filterusers" placeholder="Separate by commas...">-->
+        <table class="table table-users table-unbordered table-hover table-separate">
+					<tbody id="tableusers">
         <?php
         include 'dbconnection.php';
         $res = $mysqli->query($select_users);
 
-        echo '
-        <table class="table table-users table-unbordered table-hover table-separate">
-					<tbody>';
+
           while($row = $res->fetch_object()){
             echo '<tr>';
 						//echo '<td class="size-40"><div class="form-checkbox"><input type="checkbox" name="name1" value="value1"> <span class="check"><i class="fa fa-check"></i></span></div></td>';
@@ -481,9 +500,10 @@
             </td>
             </tr>';
           }
-				echo '</tbody>
-          </table>';
+
         ?>
+          </tbody>
+        </table>
 			</div>
 		</div>
 
