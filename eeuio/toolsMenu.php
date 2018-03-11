@@ -396,10 +396,10 @@
 					<!-- /card -->
 					
 				</div>
-				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-49">
+				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-49" >
 				
 					<!-- Card -->
-					<div class="card primary-view animated fadeInUp">
+					<div class="card primary-view animated fadeInUp" data-toggle="modal" data-target="#modal-2">
 					
 						<!-- Card header -->
 						<div class="card-header">
@@ -446,7 +446,7 @@
 				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-48">
 				
 					<!-- Card -->
-					<div class="card primary-view animated fadeInUp">
+					<div class="card primary-view animated fadeInUp" data-toggle="modal" data-target="#modal-3">
 					
 						<!-- Card header -->
 						<div class="card-header">
@@ -750,29 +750,70 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Detalle de la Herramienta</h4>
+        <h4 class="modal-title">Casco de Protección</h4>
       </div>
       <div class="modal-body">
 	  	<div>
 			<img title="John Smith" alt="John Smith" src="resources/Casco.gif" >
 		</div>
-		<h5>Casco de Protección</h5>
-		<p>Los principales elementos del casco se presentan en el siguiente esquema:
-			Armazón. - A su vez dividido en:
-				•	Casquete. - Elemento de material duro y de terminación lisa que constituye la forma externa general del casco.
-				•	Visera. - Es una prolongación del casquete por encima de los ojos.
-				•	Ala. - Es el borde que circunda el casquete.
-			Arnés. - Es el conjunto completo de elementos que constituyen un medio de mantener el casco en posición sobre la cabeza y de absorber energía cinética durante un impacto. 
-			Podemos diferenciar:
-				•	Banda de contorno de cabeza. - Es la parte del arnés que rodea total o parcialmente la cabeza por encima de los ojos a un nivel horizontal que representa aproximadamente la circunferencia mayor de la cabeza.
-				•	Banda de nuca. - Es una banda regulable que se ajusta detrás de la cabeza bajo el plano de la banda de cabeza y que puede ser una parte integrante de dicha banda de cabeza.
-				•	Barboquejo. - Es la banda que se acopla bajo la barbilla para ayudar a sujetar el casco sobre la cabeza. Este elemento es opcional en la constitución del equipo, y no todos los cascos tienen por qué disponer obligatoriamente de él.
+		<p>Los principales elementos del casco se presentan en el siguiente esquema:<br>
+			<b>Armazón. -</b> A su vez dividido en:<br>
+				<b>•	Casquete. -</b> Elemento de material duro y de terminación lisa que constituye la forma externa general del casco.<br>
+				<b>•	Visera. - </b>Es una prolongación del casquete por encima de los ojos.<br>
+				<b>•	Ala. -</b> Es el borde que circunda el casquete.<br>
+			<b>Arnés. -</b> Es el conjunto completo de elementos que constituyen un medio de mantener el casco en posición sobre la cabeza y de absorber energía cinética durante un impacto. <br>
 		</p>
       </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--End Tools Detail-->
+
+<!--Tools Detail-->
+<div id="modal-2" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Aislante Polimerico</h4>
+      </div>
+      <div class="modal-body">
+	  	<div>
+			<img title="John Smith" alt="John Smith" src="resources/AislantePolimerico6.gif" >
+		</div>
+		<p>Detalles<br>
+			<b>Armazón. -</b> A su vez dividido en:<br>
+				<b>•	Casquete. -</b> Elemento de material duro y de terminación lisa que constituye la forma externa general del casco.<br>
+				<b>•	Visera. - </b>Es una prolongación del casquete por encima de los ojos.<br>
+				<b>•	Ala. -</b> Es el borde que circunda el casquete.<br>
+			<b>Arnés. -</b> Es el conjunto completo de elementos que constituyen un medio de mantener el casco en posición sobre la cabeza y de absorber energía cinética durante un impacto. <br>
+		</p>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--End Tools Detail-->
+
+<!--Tools Detail-->
+<div id="modal-3" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Pinzas</h4>
+      </div>
+      <div class="modal-body">
+	  	<div>
+			<img title="John Smith" alt="John Smith" src="resources/Pinza.gif" >
+		</div>
+		<p>Detalles<br>
+			<b>Armazón. -</b> A su vez dividido en:<br>
+				<b>•	Casquete. -</b> Elemento de material duro y de terminación lisa que constituye la forma externa general del casco.<br>
+				<b>•	Visera. - </b>Es una prolongación del casquete por encima de los ojos.<br>
+				<b>•	Ala. -</b> Es el borde que circunda el casquete.<br>
+			<b>Arnés. -</b> Es el conjunto completo de elementos que constituyen un medio de mantener el casco en posición sobre la cabeza y de absorber energía cinética durante un impacto. <br>
+		</p>
+      </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
