@@ -50,7 +50,7 @@
 
   <!-- Page sidebar -->
   <div class="page-sidebar">
-  
+
   		<!-- Site header  -->
 		<header class="site-header">
 		  <div class="site-logo"><a href="index.html"><img src="images/logo.png" alt="Mouldifi" title="Mouldifi"></a></div>
@@ -58,7 +58,7 @@
 		  <div class="sidebar-mobile-menu visible-xs"><a data-target="#side-nav" data-toggle="collapse" class="mobile-menu-icon" href="#"><i class="icon-menu"></i></a></div>
 		</header>
 		<!-- /site header -->
-		
+
 		<!-- Main navigation -->
 		<ul id="side-nav" class="main-menu navbar-collapse collapse">
 			<li class="has-sub"><a href="index.html"><i class="icon-gauge"></i><span class="title">Dashboard</span></a>
@@ -167,51 +167,51 @@
 					<li><a href="detailed-view-2.html"><span class="title">Detailed Action View</span></a></li>
 				</ul>
 			</li>
-			<li class="has-sub"> 
-				<a href="#/"><i class="icon-flow-tree"></i><span class="title">Menu Levels</span></a> 
-				<ul class="nav collapse"> 
-					<li><a href="#/"><span class="title">Menu Level 1.1</span></a></li> 
-					<li><a href="#/"><span class="title">Menu Level 1.2</span></a></li> 
+			<li class="has-sub">
+				<a href="#/"><i class="icon-flow-tree"></i><span class="title">Menu Levels</span></a>
+				<ul class="nav collapse">
+					<li><a href="#/"><span class="title">Menu Level 1.1</span></a></li>
+					<li><a href="#/"><span class="title">Menu Level 1.2</span></a></li>
 					<li class="has-sub">
-						<a href="#/"><span class="title">Menu Level 1.3</span></a> 
-						<ul class="nav collapse"> 
-							<li><a href="#/"><span class="title">Menu Level 2.1</span></a></li> 
+						<a href="#/"><span class="title">Menu Level 1.3</span></a>
+						<ul class="nav collapse">
+							<li><a href="#/"><span class="title">Menu Level 2.1</span></a></li>
 							<li class="has-sub">
 								<a href="#/"><span class="title">Menu Level 2.2</span></a>
-								<ul class="nav collapse"> 
-									<li class="has-sub"> 
-										<a href="#/"><span class="title">Menu Level 3.1</span></a> 
-										<ul class="nav collapse"> 
-											<li><a href="#/"><span class="title">Menu Level 4.1</span></a></li> 
-										</ul> 
-									</li> 
-									<li><a href="#/"><span class="title">Menu Level 3.2</span></a></li> 
+								<ul class="nav collapse">
+									<li class="has-sub">
+										<a href="#/"><span class="title">Menu Level 3.1</span></a>
+										<ul class="nav collapse">
+											<li><a href="#/"><span class="title">Menu Level 4.1</span></a></li>
+										</ul>
+									</li>
+									<li><a href="#/"><span class="title">Menu Level 3.2</span></a></li>
 								</ul>
-							</li> 
-							<li><a href="#/"><span class="title">Menu Level 2.3</span></a></li> 
-						</ul> 
-					</li> 
-				</ul> 
+							</li>
+							<li><a href="#/"><span class="title">Menu Level 2.3</span></a></li>
+						</ul>
+					</li>
+				</ul>
 			</li>
 		</ul>
-		<!-- /main navigation -->		
+		<!-- /main navigation -->
   </div>
   <!-- /page sidebar -->
-  
+
   <!-- Main container -->
   <div class="main-container">
-  
+
 	<!-- Main header -->
 	<div class="main-header row gray-bg">
       <div class="col-sm-6 col-xs-7">
-	  
+
 		<!-- User info -->
-        <ul class="user-info pull-left">          
+        <ul class="user-info pull-left">
           <li class="profile-info dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false"> <img width="44" class="img-circle avatar" alt="" src="images/man-3.jpg">John Henderson <span class="caret"></span></a>
-		  
+
 			<!-- User action menu -->
             <ul class="dropdown-menu">
-              
+
               <li><a href="#/"><i class="icon-user"></i>My profile</a></li>
               <li><a href="#/"><i class="icon-mail"></i>Messages</a></li>
               <li><a href="#"><i class="icon-clipboard"></i>Tasks</a></li>
@@ -220,18 +220,18 @@
 			  <li><a href="#"><i class="icon-logout"></i>Logout</a></li>
             </ul>
 			<!-- /user action menu -->
-			
+
           </li>
         </ul>
 		<!-- /user info -->
-		
+
       </div>
-	  
+
       <div class="col-sm-6 col-xs-5">
 	  	<div class="pull-right">
 			<!-- User alerts -->
 			<ul class="user-info pull-left">
-			
+
 			  <!-- Notifications -->
 			  <li class="notifications dropdown">
 				<a data-close-others="true" data-hover="dropdown" data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-attention"></i><span class="badge badge-info">6</span></a>
@@ -253,7 +253,7 @@
 				</ul>
 			  </li>
 			  <!-- /notifications -->
-			  
+
 			  <!-- Messages -->
 			  <li class="notifications dropdown">
 				<a data-close-others="true" data-hover="dropdown" data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-mail"></i><span class="badge badge-secondary">12</span></a>
@@ -319,15 +319,15 @@
 				</ul>
 			  </li>
 			  <!-- /messages -->
-			  
+
 			</ul>
 			<!-- /user alerts -->
-			
+
 		</div>
       </div>
     </div>
 	<!-- /main header -->
-	
+
 	<!-- Secondary header -->
 	<div class="header-secondary row gray-bg">
 		<div class="col-lg-12">
@@ -335,490 +335,122 @@
 				<h1 class="page-title pull-left">Menú de Herramientas</h1>
 			</div>
 			<!-- Breadcrumb -->
-			<ol class="breadcrumb breadcrumb-2"> 
-				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li> 
-				<li><a href="short-view.html">Grid Views</a></li> 
-				<li class="active"><strong>Users</strong></li> 
+			<ol class="breadcrumb breadcrumb-2">
+				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+				<li><a href="short-view.html">Grid Views</a></li>
+				<li class="active"><strong>Users</strong></li>
 			</ol>
 		</div>
 	</div>
 	<!-- /secondary header -->
-	
+
 	<!-- Main content -->
 	<div class="main-content">
 		<!-- Card grid view -->
 		<div class="cards-container grid-view">
-			<div class="row">
-				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-50">
-				
-					<!-- Card -->
-					<div class="card primary-view animated fadeInUp" data-toggle="modal" data-target="#modal-1">
-					
-						<!-- Card header -->
-						<div class="card-header">
-						
-							<!-- Card photo -->
-							<div class="card-photo">
-								<img title="John Smith" alt="John Smith" src="resources/Casco.gif" class="img-circle avatar">
-							</div>
-							<!-- /card photo -->
-							
-							<!-- Card short description -->
-							<div class="card-short-description">
-								<h5><span class="user-name"><a href="#/">Casco</a></span></h5>
-								<p class="uppercase">Casco de Protección</p>
-							</div>
-							<!-- /card short description -->
-							
-							<!-- Card action dropdown -->
-							<div class="action-dropdown dropdown">
-								<a data-toggle="dropdown" href="#/" aria-expanded="true"><i class="icon-dot-3 icon-more"></i></a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li><a href="">Change Setting</a></li>
-									<li><a href="">View Profile</a></li>
-									<li><a href="">Send Message</a></li>
-								</ul>
-							</div>
-							<!-- /card action dropdown -->
-							
-						</div>
-						<!-- /card header -->
-						
-						<!-- Card content -->
-						<div class="card-content">
-							<p>Member Since 2008</p>
-							<p>Bio data about the user. It could contain what he does, who he is, and much more.</p>
- 							<p>More could be listed here.</p>
-						</div>
-						<!-- /card content -->
-						
-					</div>
-					<!-- /card -->
-					
-				</div>
-				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-49" >
-				
-					<!-- Card -->
-					<div class="card primary-view animated fadeInUp" data-toggle="modal" data-target="#modal-2">
-					
-						<!-- Card header -->
-						<div class="card-header">
-						
-							<!-- Card photo -->
-							<div class="card-photo">
-								<img title="John Smith" alt="John Smith" src="resources/AislantePolimerico6.gif" class="img-circle avatar">
-							</div>
-							<!-- /card photo -->
-							
-							<!-- Card short description -->
-							<div class="card-short-description">
-								<h5><span class="user-name"><a href="#/">Aislante Polimérico</a></span></h5>
-								<p class="uppercase">Herramienta de Trabajo</p>
-							</div>
-							<!-- /card short description -->
-							
-							<!-- Card action dropdown -->
-							<div class="action-dropdown dropdown">
-								<a data-toggle="dropdown" href="#/" aria-expanded="true"><i class="icon-dot-3 icon-more"></i></a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li><a href="">Change Setting</a></li>
-									<li><a href="">View Profile</a></li>
-									<li><a href="">Send Message</a></li>
-								</ul>
-							</div>
-							<!-- /card action dropdown -->
-							
-						</div>
-						<!-- /card header -->
-						
-						<!-- Card content -->
-						<div class="card-content">
-							<p>Member Since 2008</p>
-							<p>Bio data about the user. It could contain what he does, who he is, and much more.</p>
- 							<p>More could be listed here.</p>
-						</div>
-						<!-- /card content -->
-						
-					</div>
-					<!-- /card -->
-					
-				</div>
-				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-48">
-				
-					<!-- Card -->
-					<div class="card primary-view animated fadeInUp" data-toggle="modal" data-target="#modal-3">
-					
-						<!-- Card header -->
-						<div class="card-header">
-						
-							<!-- Card photo -->
-							<div class="card-photo">
-								<img title="John Smith" alt="John Smith" src="resources/Pinza.gif" class="img-circle avatar">
-							</div>
-							<!-- /card photo -->
-							
-							<!-- Card short description -->
-							<div class="card-short-description">
-								<h5><span class="user-name"><a href="#/">Pinza</a></span></h5>
-								<p class="uppercase">Herramienta de Trabajo</p>
-							</div>
-							<!-- /card short description -->
-							
-							<!-- Card action dropdown -->
-							<div class="action-dropdown dropdown">
-								<a data-toggle="dropdown" href="#/" aria-expanded="true"><i class="icon-dot-3 icon-more"></i></a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li><a href="">Change Setting</a></li>
-									<li><a href="">View Profile</a></li>
-									<li><a href="">Send Message</a></li>
-								</ul>
-							</div>
-							<!-- /card action dropdown -->
-							
-						</div>
-						<!-- /card header -->
-						
-						<!-- Card content -->
-						<div class="card-content">
-							<p>Member Since 2008</p>
-							<p>Bio data about the user. It could contain what he does, who he is, and much more.</p>
- 							<p>More could be listed here.</p>
-						</div>
-						<!-- /card content -->
-						
-					</div>
-					<!-- /card -->
-					
-				</div>
-				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-47">
-				
-					<!-- Card -->
-					<div class="card primary-view animated fadeInUp">
-					
-						<!-- Card header -->
-						<div class="card-header">
-						
-							<!-- Card photo -->
-							<div class="card-photo">
-								<img title="John Smith" alt="John Smith" src="images/man-3.jpg" class="img-circle avatar">
-							</div>
-							<!-- /card photo -->
-							
-							<!-- Card short description -->
-							<div class="card-short-description">
-								<h5><span class="user-name"><a href="#/">John Smith</a></span></h5>
-								<p class="uppercase">Agent</p>
-							</div>
-							<!-- /card short description -->
-							
-							<!-- Card action dropdown -->
-							<div class="action-dropdown dropdown">
-								<a data-toggle="dropdown" href="#/" aria-expanded="true"><i class="icon-dot-3 icon-more"></i></a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li><a href="">Change Setting</a></li>
-									<li><a href="">View Profile</a></li>
-									<li><a href="">Send Message</a></li>
-								</ul>
-							</div>
-							<!-- /card action dropdown -->
-							
-						</div>
-						<!-- /card header -->
-						
-						<!-- Card content -->
-						<div class="card-content">
-							<p>Member Since 2008</p>
-							<p>Bio data about the user. It could contain what he does, who he is, and much more.</p>
- 							<p>More could be listed here.</p>
-						</div>
-						<!-- /card content -->
-						
-					</div>
-					<!-- /card -->
-					
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-46">
-				
-					<!-- Card -->
-					<div class="card primary-view animated fadeInUp">
-					
-						<!-- Card header -->
-						<div class="card-header">
-						
-							<!-- Card photo -->
-							<div class="card-photo">
-								<img title="John Smith" alt="John Smith" src="images/man-3.jpg" class="img-circle avatar">
-							</div>
-							<!-- /card photo -->
-							
-							<!-- Card short description -->
-							<div class="card-short-description">
-								<h5><span class="user-name"><a href="#/">John Smith</a></span></h5>
-								<p class="uppercase">Agent</p>
-							</div>
-							<!-- /card short description -->
-							
-							<!-- Card action dropdown -->
-							<div class="action-dropdown dropdown">
-								<a data-toggle="dropdown" href="#/" aria-expanded="true"><i class="icon-dot-3 icon-more"></i></a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li><a href="">Change Setting</a></li>
-									<li><a href="">View Profile</a></li>
-									<li><a href="">Send Message</a></li>
-								</ul>
-							</div>
-							<!-- /card action dropdown -->
-							
-						</div>
-						<!-- /card header -->
-						
-						<!-- Card content -->
-						<div class="card-content">
-							<p>Member Since 2008</p>
-							<p>Bio data about the user. It could contain what he does, who he is, and much more.</p>
- 							<p>More could be listed here.</p>
-						</div>
-						<!-- /card content -->
-						
-					</div>
-					<!-- /card -->
-					
-				</div>
-				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-45">
-				
-					<!-- Card -->
-					<div class="card primary-view animated fadeInUp">
-					
-						<!-- Card header -->
-						<div class="card-header">
-						
-							<!-- Card photo -->
-							<div class="card-photo">
-								<img title="John Smith" alt="John Smith" src="images/man-3.jpg" class="img-circle avatar">
-							</div>
-							<!-- /card photo -->
-							
-							<!-- Card short description -->
-							<div class="card-short-description">
-								<h5><span class="user-name"><a href="#/">John Smith</a></span></h5>
-								<p class="uppercase">Agent</p>
-							</div>
-							<!-- /card short description -->
-							
-							<!-- Card action dropdown -->
-							<div class="action-dropdown dropdown">
-								<a data-toggle="dropdown" href="#/" aria-expanded="true"><i class="icon-dot-3 icon-more"></i></a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li><a href="">Change Setting</a></li>
-									<li><a href="">View Profile</a></li>
-									<li><a href="">Send Message</a></li>
-								</ul>
-							</div>
-							<!-- /card action dropdown -->
-							
-						</div>
-						<!-- /card header -->
-						
-						<!-- Card content -->
-						<div class="card-content">
-							<p>Member Since 2008</p>
-							<p>Bio data about the user. It could contain what he does, who he is, and much more.</p>
- 							<p>More could be listed here.</p>
-						</div>
-						<!-- /card content -->
-						
-					</div>
-					<!-- /card -->
-					
-				</div>
-				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-44">
-				
-					<!-- Card -->
-					<div class="card primary-view animated fadeInUp">
-					
-						<!-- Card header -->
-						<div class="card-header">
-						
-							<!-- Card photo -->
-							<div class="card-photo">
-								<img title="John Smith" alt="John Smith" src="images/man-3.jpg" class="img-circle avatar">
-							</div>
-							<!-- /card photo -->
-							
-							<!-- Card short description -->
-							<div class="card-short-description">
-								<h5><span class="user-name"><a href="#/">John Smith</a></span></h5>
-								<p class="uppercase">Agent</p>
-							</div>
-							<!-- /card short description -->
-							
-							<!-- Card action dropdown -->
-							<div class="action-dropdown dropdown">
-								<a data-toggle="dropdown" href="#/" aria-expanded="true"><i class="icon-dot-3 icon-more"></i></a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li><a href="">Change Setting</a></li>
-									<li><a href="">View Profile</a></li>
-									<li><a href="">Send Message</a></li>
-								</ul>
-							</div>
-							<!-- /card action dropdown -->
-							
-						</div>
-						<!-- /card header -->
-						
-						<!-- Card content -->
-						<div class="card-content">
-							<p>Member Since 2008</p>
-							<p>Bio data about the user. It could contain what he does, who he is, and much more.</p>
- 							<p>More could be listed here.</p>
-						</div>
-						<!-- /card content -->
-						
-					</div>
-					<!-- /card -->
-					
-				</div>
-				<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-43">
-				
-					<!-- Card -->
-					<div class="card primary-view animated fadeInUp">
-					
-						<!-- Card header -->
-						<div class="card-header">
-						
-							<!-- Card photo -->
-							<div class="card-photo">
-								<img title="John Smith" alt="John Smith" src="images/man-3.jpg" class="img-circle avatar">
-							</div>
-							<!-- /card photo -->
-							
-							<!-- Card short description -->
-							<div class="card-short-description">
-								<h5><span class="user-name"><a href="#/">John Smith</a></span></h5>
-								<p class="uppercase">Agent</p>
-							</div>
-							<!-- /card short description -->
-							
-							<!-- Card action dropdown -->
-							<div class="action-dropdown dropdown">
-								<a data-toggle="dropdown" href="#/" aria-expanded="true"><i class="icon-dot-3 icon-more"></i></a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li><a href="">Change Setting</a></li>
-									<li><a href="">View Profile</a></li>
-									<li><a href="">Send Message</a></li>
-								</ul>
-							</div>
-							<!-- /card action dropdown -->
-							
-						</div>
-						<!-- /card header -->
-						
-						<!-- Card content -->
-						<div class="card-content">
-							<p>Member Since 2008</p>
-							<p>Bio data about the user. It could contain what he does, who he is, and much more.</p>
- 							<p>More could be listed here.</p>
-						</div>
-						<!-- /card content -->
-						
-					</div>
-					<!-- /card -->
-					
-				</div>
-			</div>
+      <?php
+        include 'dbconnection.php';
+        $res = $mysqli->query($select_tools);
+        $cont = 0; //Se suma 1 para controlar las filas, cada 4 un salto de linea y reseteo
+        $index_value = 50; //Se resta de 1 en 1
+        $modal = 1; //Se suma 1
+        while($row = $res->fetch_object()){
+          if($cont == 0){
+            echo '<div class="row">';
+          }
+          //echo '<p>'.$row->HER_NOMBRE.'<p>';
+          echo '<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-'.$index_value.'">';
+            echo '<!-- Card -->';
+            echo '<div class="card primary-view animated fadeInUp" data-toggle="modal" data-target="#modal-'.$modal.'">';
+              echo '<!-- Card header -->';
+              echo '<div class="card-header">';
+                echo '<!-- Card photo -->';
+                echo '<div class="card-photo">';
+                  echo '<img title="'.$row->HER_NOMBRE.'" alt="'.$row->HER_NOMBRE.'" src="'.$row->HER_IMAGEN.'" class="img-circle avatar">';
+                echo '</div>';
+                echo '<!-- /card photo -->';
+                echo '<!-- Card short description -->';
+                echo '<div class="card-short-description">';
+                  echo '<h5><span class="user-name"><a href="#/">'.$row->HER_NOMBRE.'</a></span></h5>';
+                  echo '<p class="uppercase">'.$row->HER_DEFINICION.'</p>';
+                echo '</div>';
+                echo '<!-- /card short description -->';
+                echo '<!-- Card action dropdown -->';
+                echo '<div class="action-dropdown dropdown">';
+                  echo '<a data-toggle="dropdown" href="#/" aria-expanded="true"><i class="icon-dot-3 icon-more"></i></a>';
+                  echo '<ul class="dropdown-menu dropdown-menu-right">';
+                    echo '<li><a href="">Change Setting</a></li>';
+                    echo '<li><a href="">View Profile</a></li>';
+                    echo '<li><a href="">Send Message</a></li>';
+                  echo '</ul>';
+                echo '</div>';
+                echo '<!-- /card action dropdown -->';
+              echo '</div>';
+              echo '<!-- /card header -->';
+              echo '<!-- Card content -->';
+              echo '<div class="card-content">';
+                echo '<p>'.$row->HER_CARACTERISTICAS.'</p>';
+              echo '</div>';
+              echo '<!-- /card content -->';
+            echo '</div>';
+            echo '<!-- /card -->';
+          echo '</div>';
+          $cont++; //Actualizacion del contador
+          $index_value--;
+          $modal++;
+          if($cont == 4){
+            echo '</div>';
+            $cont = 0;
+          }
+        }
+        if($cont != 4){
+          echo '</div>';
+        }
+      ?>
 		</div>
-		
+
 		<!-- Footer -->
-		<footer class="animatedParent animateOnce z-index-10"> 
+		<footer class="animatedParent animateOnce z-index-10">
 			<div class="footer-main animated fadeInUp slow">&copy; 2016 <strong>Mouldifi</strong> Admin Theme by <a target="_blank" href="#/">G-axon</a> </div>
-		</footer>	
+		</footer>
 		<!-- /footer -->
-		
+
 	  </div>
 	  <!-- /main content -->
-	  
+
   </div>
   <!-- /main container -->
-  
+
 </div>
 <!-- /page container -->
-<!--Tools Detail-->
-<div id="modal-1" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Casco de Protección</h4>
-      </div>
-      <div class="modal-body">
-	  	<div>
-			<img title="John Smith" alt="John Smith" src="resources/Casco.gif" >
-		</div>
-		<p>Los principales elementos del casco se presentan en el siguiente esquema:<br>
-			<b>Armazón. -</b> A su vez dividido en:<br>
-				<b>•	Casquete. -</b> Elemento de material duro y de terminación lisa que constituye la forma externa general del casco.<br>
-				<b>•	Visera. - </b>Es una prolongación del casquete por encima de los ojos.<br>
-				<b>•	Ala. -</b> Es el borde que circunda el casquete.<br>
-			<b>Arnés. -</b> Es el conjunto completo de elementos que constituyen un medio de mantener el casco en posición sobre la cabeza y de absorber energía cinética durante un impacto. <br>
-		</p>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!--End Tools Detail-->
 
-<!--Tools Detail-->
-<div id="modal-2" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Aislante Polimerico</h4>
-      </div>
-      <div class="modal-body">
-	  	<div>
-			<img title="John Smith" alt="John Smith" src="resources/AislantePolimerico6.gif" >
-		</div>
-		<p>Detalles<br>
-			<b>Armazón. -</b> A su vez dividido en:<br>
-				<b>•	Casquete. -</b> Elemento de material duro y de terminación lisa que constituye la forma externa general del casco.<br>
-				<b>•	Visera. - </b>Es una prolongación del casquete por encima de los ojos.<br>
-				<b>•	Ala. -</b> Es el borde que circunda el casquete.<br>
-			<b>Arnés. -</b> Es el conjunto completo de elementos que constituyen un medio de mantener el casco en posición sobre la cabeza y de absorber energía cinética durante un impacto. <br>
-		</p>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!--End Tools Detail-->
+<?php
+include 'dbconnection.php';
+$res = $mysqli->query($select_tools);
+$modalDetail = 1; //Se suma 1 para controlar las filas, cada 4 un salto de linea y reseteo
 
-<!--Tools Detail-->
-<div id="modal-3" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Pinzas</h4>
-      </div>
-      <div class="modal-body">
-	  	<div>
-			<img title="John Smith" alt="John Smith" src="resources/Pinza.gif" >
-		</div>
-		<p>Detalles<br>
-			<b>Armazón. -</b> A su vez dividido en:<br>
-				<b>•	Casquete. -</b> Elemento de material duro y de terminación lisa que constituye la forma externa general del casco.<br>
-				<b>•	Visera. - </b>Es una prolongación del casquete por encima de los ojos.<br>
-				<b>•	Ala. -</b> Es el borde que circunda el casquete.<br>
-			<b>Arnés. -</b> Es el conjunto completo de elementos que constituyen un medio de mantener el casco en posición sobre la cabeza y de absorber energía cinética durante un impacto. <br>
-		</p>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!--End Tools Detail-->
-
+while($row = $res->fetch_object()){
+	echo '<!--Tools Detail-->';
+	echo '<div id="modal-'.$modalDetail.'" class="modal fade" tabindex="-1" role="dialog">';
+	echo '<div class="modal-dialog">';
+		echo '<div class="modal-content">';
+		echo '<div class="modal-header">';
+			echo '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+			echo '<h4 class="modal-title">'.$row->HER_NOMBRE.'</h4>';
+		echo '</div>';
+		echo '<div class="modal-body">';
+			echo '<div>';
+				echo '<img title="'.$row->HER_NOMBRE.'" alt="'.$row->HER_NOMBRE.'" src="'.$row->HER_IMAGEN.'">';
+			echo '</div> //Caracteristicas';
+			echo '<p>Caracteristicas:<br>'.$row->HER_CARACTERISTICAS.'</p>';
+		echo '</div>';
+		echo '</div><!-- /.modal-content -->';
+	echo '</div><!-- /.modal-dialog -->';
+	echo '</div><!-- /.modal -->';
+	echo '<!--End Tools Detail-->';
+	$modalDetail++;
+}
+?>
 
 <!--Load JQuery-->
 <script src="js/jquery.min.js"></script>

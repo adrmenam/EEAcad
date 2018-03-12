@@ -7,10 +7,12 @@
   $mysqli = new mysqli($server, $user, $password, $db);
   $mysqli->set_charset("utf8");
 
-  
+
 
   //consultas
 
     //usuarios
     $select_users="SELECT * FROM USUARIO";
+    $select_tool="SELECT *FROM HERRAMIENTA WHERE HER_CODIGO = 1";
+    $select_tools="SELECT *FROM HERRAMIENTA ORDER BY HER_CODIGO";
 ?>
