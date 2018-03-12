@@ -661,23 +661,7 @@
 </html>
 
 <?php
-include 'connection.php';
-// Realizar una consulta MySQL
-
-
-
-// Imprimir los resultados en HTML
-// echo "<table>\n";
-// while ($line = mysql_fetch_array($result_evaxusu, MYSQL_ASSOC)) {
-//     echo "\t<tr>\n";
-//     foreach ($line as $col_value) {
-//         echo "\t\t<td>$col_value</td>\n";
-//     }
-//     echo "\t</tr>\n";
-// }
-// echo "</table>\n";
-
-
+include 'dbconnection.php';
 
 
 echo '
@@ -713,13 +697,15 @@ echo '
 							</tr>
 						</thead>
 						<tbody>';
-						while ($line = mysql_fetch_array($result_evaxusu, MYSQL_ASSOC)) {
+						$res = $mysqli->query($select_evaxusu);
+						while($row = $res->fetch_object()){
 							echo '<tr>';
-							foreach ($line as $col_value) {
+							foreach ($row as $col_value) {
 								echo "<td>$col_value</td>";
 							}
 							echo "</tr>";
-						}
+	          }
+
 	echo '</tbody>
 	<tfoot>
 	<tr>
@@ -741,9 +727,4 @@ echo '
 
 
 
-// Liberar resultados
-mysql_free_result($result_evaxusu);
-
-// Cerrar la conexión
-mysql_close($link);
 ?>
