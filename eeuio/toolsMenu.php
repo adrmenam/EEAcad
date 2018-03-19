@@ -53,7 +53,7 @@
 
   		<!-- Site header  -->
 		<header class="site-header">
-		  <div class="site-logo"><a href="index.html"><img src="images/logo.png" alt="Mouldifi" title="Mouldifi"></a></div>
+		  <div class="site-logo"><a href="index.html"><img src="images/logo.jpg" alt="Mouldifi" title="Mouldifi"></a></div>
 		  <div class="sidebar-collapse hidden-xs"><a class="sidebar-collapse-icon" href="#"><i class="icon-menu"></i></a></div>
 		  <div class="sidebar-mobile-menu visible-xs"><a data-target="#side-nav" data-toggle="collapse" class="mobile-menu-icon" href="#"><i class="icon-menu"></i></a></div>
 		</header>
@@ -64,13 +64,13 @@
 			<li class="has-sub"><a href="index.html"><i class="icon-gauge"></i><span class="title">Dashboard</span></a>
 				<ul class="nav collapse">
 					<li><a href="index.html"><span class="title">Misc.</span></a></li>
-					<li><a href="ecommerce-dashboard.html"><span class="title">E-Commerce</span></a></li>
-					<li><a href="news-dashboard.html"><span class="title">News Portal</span></a></li>
+					<!--<li><a href="ecommerce-dashboard.html"><span class="title">E-Commerce</span></a></li>
+					<li><a href="news-dashboard.html"><span class="title">News Portal</span></a></li>-->
 				</ul>
 			</li>
 			<li ><a href="users.php"><i class="icon-users"></i><span class="title">Usuarios</span></a>
 			<li class="active"><a href="users.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
-			<li class="has-sub"><a href="collapsed-sidebar.html"><i class="icon-layout"></i><span class="title">Layouts</span></a>
+			<!--<li class="has-sub"><a href="collapsed-sidebar.html"><i class="icon-layout"></i><span class="title">Layouts</span></a>
 				<ul class="nav collapse">
 					<li><a href="collapsed-sidebar.html"><span class="title">Collapsed Sidebar</span></a></li>
 					<li><a href="fixed-sidebar.html"><span class="title">Fixed Sidebar</span></a></li>
@@ -191,6 +191,11 @@
 							<li><a href="#/"><span class="title">Menu Level 2.3</span></a></li>
 						</ul>
 					</li>
+				</ul>
+			</li>-->
+			<li class="has-sub"><a href="panels.html"><i class="icon-newspaper"></i><span class="title">Evaluaciones</span></a>
+				<ul class="nav collapse">
+					<li><a href="evaluation.php"><span class="title">Resultados de Evaluaciones</span></a></li>
 				</ul>
 			</li>
 		</ul>
@@ -411,7 +416,8 @@
 
 		<!-- Footer -->
 		<footer class="animatedParent animateOnce z-index-10">
-			<div class="footer-main animated fadeInUp slow">&copy; 2016 <strong>Mouldifi</strong> Admin Theme by <a target="_blank" href="#/">G-axon</a> </div>
+			<div class="footer-main animated fadeInUp slow">&copy; 2018 <strong>EEUIO</strong> by <a target="_blank" href="#/">KAY Innovation</a> </div>
+
 		</footer>
 		<!-- /footer -->
 
