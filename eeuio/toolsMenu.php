@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +71,12 @@
 					<li><a href="news-dashboard.html"><span class="title">News Portal</span></a></li>-->
 				</ul>
 			</li>
-			<li ><a href="users.php"><i class="icon-users"></i><span class="title">Usuarios</span></a>
+      <?php
+        if ($_SESSION["profile"]==="Estudiante") {
+          echo "<li ><a href='users.php'><i class='icon-users'></i><span class='title'>Usuarios</span></a>";
+        }
+      ?>
+			<!-- <li ><a href="users.php"><i class="icon-users"></i><span class="title">Usuarios</span></a> -->
 			<li class="active"><a href="users.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
 			<!--<li class="has-sub"><a href="collapsed-sidebar.html"><i class="icon-layout"></i><span class="title">Layouts</span></a>
 				<ul class="nav collapse">
@@ -212,7 +220,7 @@
 
 		<!-- User info -->
         <ul class="user-info pull-left">
-          <li class="profile-info dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false"> <img width="44" class="img-circle avatar" alt="" src="images/man-3.jpg">John Henderson <span class="caret"></span></a>
+          <li class="profile-info dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false"> <img width="44" class="img-circle avatar" alt="" src="images/man-3.jpg"><?php echo  $_SESSION["nameuser"] ?> <span class="caret"></span></a>
 
 			<!-- User action menu -->
             <ul class="dropdown-menu">
@@ -360,6 +368,7 @@
         $index_value = 50; //Se resta de 1 en 1
         $modal = 1; //Se suma 1
         while($row = $res->fetch_object()){
+
           if($cont == 0){
             echo '<div class="row">';
           }
