@@ -11,12 +11,12 @@ if($_POST){
      $flag = true;
      if($row->USU_ROL === "Estudiante"){
        session_start();
-       $_SESSION["nameuser"] = $row->USU_NOMBRES." ".$row->USU_APELLIDOS;
+       $_SESSION["username"] = $row->USU_NOMBRES." ".$row->USU_APELLIDOS;
        $_SESSION["profile"] = $row->USU_ROL;
        redirect("toolsMenu.php");
      }else if ($row->USU_ROL === "Administrador") {
        session_start();
-       $_SESSION["nameuser"] = $row->USU_NOMBRES." ".$row->USU_APELLIDOS;
+       $_SESSION["username"] = $row->USU_NOMBRES." ".$row->USU_APELLIDOS;
        $_SESSION["profile"] = $row->USU_ROL;
        redirect("users.php");
      }
