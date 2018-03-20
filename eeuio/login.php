@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,10 +56,15 @@
 					<h2><strong>Welcome</strong>, please login</h2>
 					<form id="validateUser" method="post" action="validateUser.php">
 						<div class="form-group">
-							<input type="text" placeholder="Username" class="form-control" name="emailaddress">
+							<input type="text" placeholder="email" class="form-control" name="emailaddress">
 						</div>
 						<div class="form-group">
 							<input type="password" placeholder="Password" class="form-control" name="password">
+							<?php
+								if ($_SESSION["errorsession"]=="errorsession") {
+									echo '<span class="badge badge-danger">Error al iniciar sesión. Usuario o contraseña incorrectos.</span>';
+								}
+							 ?>
 						</div>
 						<div class="form-group">
 							 <div class="checkbox checkbox-replace">

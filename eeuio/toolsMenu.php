@@ -72,12 +72,12 @@
 				</ul>
 			</li>
       <?php
-        if ($_SESSION["profile"]==="Estudiante") {
+        if ($_SESSION["profile"]==="Administrador"){
           echo "<li ><a href='users.php'><i class='icon-users'></i><span class='title'>Usuarios</span></a>";
         }
       ?>
 			<!-- <li ><a href="users.php"><i class="icon-users"></i><span class="title">Usuarios</span></a> -->
-			<li class="active"><a href="users.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
+			<li class="active"><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
 			<!--<li class="has-sub"><a href="collapsed-sidebar.html"><i class="icon-layout"></i><span class="title">Layouts</span></a>
 				<ul class="nav collapse">
 					<li><a href="collapsed-sidebar.html"><span class="title">Collapsed Sidebar</span></a></li>
@@ -349,9 +349,9 @@
 			</div>
 			<!-- Breadcrumb -->
 			<ol class="breadcrumb breadcrumb-2">
-				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-				<li><a href="short-view.html">Grid Views</a></li>
-				<li class="active"><strong>Users</strong></li>
+				<!-- <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li> -->
+				<!-- <li><a href="short-view.html">Grid Views</a></li> -->
+				<li class="active"><strong>Herramientas</strong></li>
 			</ol>
 		</div>
 	</div>
