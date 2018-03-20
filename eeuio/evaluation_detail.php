@@ -691,7 +691,8 @@ echo '
 							<tr>
 								<th></th>
 								<th>Cédula</th>
-								<th>Estudiante</th>
+								<th>Apellidos</th>
+								<th>Nombres</th>
 								<th>Tipo de Prueba</th>
 								<th>Calificación</th>
 								<th>Fecha</th>
@@ -702,11 +703,9 @@ echo '
 						while($row = $res->fetch_object()){
 							echo '<tr>';
 							echo '<td><a href="evaluation_detail.php">Ver detalles</td>';
-							echo '<td name=cedula>'.$row->USU_CEDULA.'</td>';
-							echo '<td>'.$row->USU_APELLIDOS.' '.$row->USU_NOMBRES.'</td>';
-							echo '<td>'.$row->TIE_NOMBRE.'</td>';
-							echo '<td>'.$row->EXU_RESULTADO.'</td>';
-							echo '<td name=fecha>'.$row->EXU_FECHA.'</td>';
+							foreach ($row as $col_value) {
+								echo "<td>$col_value</td>";
+							}
 							echo "</tr>";
 	          }
 
@@ -716,6 +715,7 @@ echo '
 		<th></th>
 		<th>Cédula</th>
 		<th>Apellidos</th>
+		<th>Nombres</th>
 		<th>Tipo de Prueba</th>
 		<th>Calificación</th>
 		<th>Fecha</th>
