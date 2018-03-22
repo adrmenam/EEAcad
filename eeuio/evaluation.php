@@ -702,10 +702,13 @@ echo '
 						while($row = $res->fetch_object()){
 							echo '<tr>';
 							echo '<td><a href="evaluation_detail.php">Ver detalles</td>';
-							echo '<td name=cedula>'.$row->USU_CEDULA.'</td>';
+							echo '<td name=cedula[]>'.$row->USU_CEDULA.'</td>';
 							echo '<td>'.$row->USU_APELLIDOS.' '.$row->USU_NOMBRES.'</td>';
 							echo '<td>'.$row->TIE_NOMBRE.'</td>';
-							echo '<td>'.$row->EXU_RESULTADO.'</td>';
+							if($row->TIE_NOMBRE === "Práctica")
+								echo "<td></td>";	
+							else
+								echo '<td>'.$row->EXU_RESULTADO.'</td>';
 							echo '<td name=fecha>'.$row->EXU_FECHA.'</td>';
 							echo "</tr>";
 	          }
