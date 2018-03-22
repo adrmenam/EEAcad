@@ -664,61 +664,101 @@
 
 <?php
 include 'dbconnection.php';
+include 'redirect.php';
+
+if($_GET){
+	$ci=$_GET["ci"];
+	$tie=$_GET["tie"];
+	$fecha=$_GET["fecha"];
+	$sqlIDtie="SELECT * FROM TIPO_EVALUACION WHERE TIE_NOMBRE='".$tie."'";
+	$sqlIDUsu='SELECT * FROM USUARIO WHERE USU_CEDULA='.$ci;
+	$resusu = $mysqli->query($sqlIDUsu);
+	while($row = $resusu->fetch_object()){
+		$IDusu=$row->USU_CODIGO;
+		$nombre=$row->USU_NOMBRES." ".$row->USU_APELLIDOS;
+	}
+
+	$restie = $mysqli->query($sqlIDtie);
+	while($row = $restie->fetch_object()){
+		$IDtie=$row->TIE_CODIGO;
+	}
+	$sqlPaso="";
+	if($IDtie==2){
+		$sqlPaso="SELECT P.PAS_CODIGO,PAS_DESCRIPCION,PAS_INDICACIONES,PXU_ACIERTO FROM PASO P,PASXUSU PU 
+		WHERE P.PAS_CODIGO=PU.PAS_CODIGO AND USU_CODIGO=".$IDusu." AND TIE_CODIGO=".$IDtie.";";
+	}else{
+		$sqlPaso="SELECT P.PAS_CODIGO,PAS_DESCRIPCION,PAS_INDICACIONES,PXU_INTENTOS FROM PASO P,PASXUSU PU 
+		WHERE P.PAS_CODIGO=PU.PAS_CODIGO AND USU_CODIGO=".$IDusu." AND TIE_CODIGO=".$IDtie.";";
+	}
+
+
+}
 
 
 echo '
-<h1 class="page-title">Lista de Evaluaciones</h1>
+<h1 class="page-title">Detalle de Evaluacion</h1>
 <!-- Breadcrumb -->
 <ol class="breadcrumb breadcrumb-2">
 	<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
 	<li><a href="evaluation.php">Evaluaciones</a></li>
+	<li><a href="evaluatio_detail.php">Detalles</a></li>
 </ol>
 <div class="row">
 	<div class="col-lg-12 animatedParent animateOnce z-index-50">
 		<div class="panel panel-default animated fadeInUp">
 			<div class="panel-heading clearfix">
-				<h3 class="panel-title">Evaluaciones realizadas</h3>
+				<h2 class="panel-title">Pasos de la evaluación realizadas</h2>
+				
 				<ul class="panel-tool-options">
 					<li><a data-rel="collapse" href="#"><i class="icon-down-open"></i></a></li>
 					<li><a data-rel="reload" href="#"><i class="icon-arrows-ccw"></i></a></li>
 					<li><a data-rel="close" href="#"><i class="icon-cancel"></i></a></li>
 				</ul>
-			</div>
+				<h4>.</h4>
+				<h4><b>Alumno: </b> '.$nombre.'</h4>';
+				echo'<h4><b>Tipo de Prueba: </b>'.$tie.'</h4>';
+				echo'<h4><b>Fecha de realización: </b>'.$fecha.'</h4>';
+echo'			</div>
 			<div class="panel-body">
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover dataTables-example" >
 						<thead>
 							<tr>
-								<th></th>
-								<th>Cédula</th>
-								<th>Apellidos</th>
-								<th>Nombres</th>
-								<th>Tipo de Prueba</th>
-								<th>Calificación</th>
-								<th>Fecha</th>
+								
+								<th>Número de Paso</th>
+								<th>Descripción</th>';
+								if($IDtie==2){
+									echo "<th>Acierto</th>";
+								}else{
+									echo "<th>Intentos</th>";
+								}echo'
+								
 							</tr>
 						</thead>
 						<tbody>';
-						$res = $mysqli->query($select_evaxusu);
+						$res = $mysqli->query($sqlPaso);
 						while($row = $res->fetch_object()){
 							echo '<tr>';
-							echo '<td><a href="evaluation_detail.php">Ver detalles</td>';
-							foreach ($row as $col_value) {
-								echo "<td>$col_value</td>";
+							echo '<td>'.$row->PAS_DESCRIPCION.'</td>';
+							echo '<td>'.$row->PAS_INDICACIONES.'</td>';
+							if($IDtie==2){
+								echo '<td>'.$row->PXU_ACIERTO.'</td>';
+							}else{
+								echo '<td>'.$row->PXU_INTENTOS.'</td>';
 							}
 							echo "</tr>";
-	          }
+	          			}
 
 	echo '</tbody>
 	<tfoot>
 	<tr>
-		<th></th>
-		<th>Cédula</th>
-		<th>Apellidos</th>
-		<th>Nombres</th>
-		<th>Tipo de Prueba</th>
-		<th>Calificación</th>
-		<th>Fecha</th>
+	<th>Número de Paso</th>
+	<th>Descripción</th>';
+	if($IDtie==2){
+		echo "<th>Acierto</th>";
+	}else{
+		echo "<th>Intentos</th>";
+	}echo'
 	</tr>
 	</tfoot>
 	</table>

@@ -685,6 +685,8 @@ echo '
 				</ul>
 			</div>
 			<div class="panel-body">
+				<form id="detail" method="post" action="evaluation_detail.php">
+			
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover dataTables-example" >
 						<thead>
@@ -701,8 +703,9 @@ echo '
 						$res = $mysqli->query($select_evaxusu);
 						while($row = $res->fetch_object()){
 							echo '<tr>';
-							echo '<td><a href="evaluation_detail.php">Ver detalles</td>';
-							echo '<td name=cedula[]>'.$row->USU_CEDULA.'</td>';
+							//<li><a href="updateuserform.php?ci='.$row->USU_CEDULA.'" >Editar</a></li>
+							echo '<td><a href="evaluation_detail.php?ci='.$row->USU_CEDULA.'&tie='.$row->TIE_NOMBRE.'&fecha='.$row->EXU_FECHA.'">Ver detalles</td>';
+							echo '<td>'.$row->USU_CEDULA.'</td>';
 							echo '<td>'.$row->USU_APELLIDOS.' '.$row->USU_NOMBRES.'</td>';
 							echo '<td>'.$row->TIE_NOMBRE.'</td>';
 							if($row->TIE_NOMBRE === "Práctica")
@@ -726,6 +729,7 @@ echo '
 	</tfoot>
 	</table>
 	</div>
+	</form>
 	</div>
 	</div>
 	</div>
