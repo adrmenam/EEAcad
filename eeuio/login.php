@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Mouldifi - A fully responsive, HTML5 based admin theme">
 <meta name="keywords" content="Responsive, HTML5, admin theme, business, professional, Mouldifi, web design, CSS3">
-<title>Mouldifi | Login</title>
+<title>EEQAcad | Login</title>
 <!-- Site favicon -->
 <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
 <!-- /site favicon -->
@@ -46,14 +46,14 @@
 
 </head>
 <body class="login-page">
-	<div class="login-pag-inner">
+	<div class="login-pag-inner" style="background-image: url('resources/fondo.jpg'); no-repeat fixed center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;height: 100%;width: 100% ; text-align: center;">
 		<div class="animatedParent animateOnce z-index-50">
 			<div class="login-container animated growIn slower">
-				<div class="login-branding">
-					<a href="index.html"><img src="images/logo.png" alt="Mouldifi" title="Mouldifi"></a>
-				</div>
 				<div class="login-content">
-					<h2><strong>Welcome</strong>, please login</h2>
+          <div class="login-branding">
+  					<a href="index.html"><img src="resources/logo.png" alt="Mouldifi" title="Mouldifi"></a>
+  				</div>
+					<h2><strong>Bienvenido</strong>, Por favor inicie sesión</h2>
 					<form id="validateUser" method="post" action="validateUser.php">
 						<div class="form-group">
 							<input type="text" placeholder="email" class="form-control" name="emailaddress">
@@ -71,13 +71,13 @@
 						<div class="form-group">
 							 <div class="checkbox checkbox-replace">
 								<input type="checkbox" id="remeber">
-								<label for="remeber">Remeber me</label>
+								<!-- <label for="remeber">Remeber me</label> -->
 							  </div>
 						 </div>
 						<div class="form-group">
 							<button class="btn btn-primary btn-block">Login</button>
 						</div>
-						<p class="text-center"><a href="forgot-password.html">Forgot your password?</a></p>
+						<!-- <p class="text-center"><a href="forgot-password.html">Forgot your password?</a></p> -->
 					</form>
 				</div>
 			</div>

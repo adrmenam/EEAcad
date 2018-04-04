@@ -117,7 +117,7 @@
               <li><a href="#"><i class="icon-clipboard"></i>Tasks</a></li>
 			  <li class="divider"></li>
 			  <li><a href="#"><i class="icon-cog"></i>Account settings</a></li> -->
-			  <li><a href="login.php"><i class="icon-logout"></i>Logout</a></li>
+			       <li><a href="logout.php" ><i class="icon-logout"></i>Logout</a></li>
             </ul>
 			<!-- /user action menu -->
 
@@ -359,6 +359,7 @@ while($row = $res->fetch_object()){
 <!-- Load CSS3 Animate It Plugin JS -->
 <script src="js/plugins/css3-animate-it-plugin/css3-animate-it.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/generalScript.js"></script>
 <script src="js/plugins/metismenu/jquery.metisMenu.js"></script>
 <!-- Select2-->
 <script src="js/plugins/select2/select2.full.min.js"></script>
