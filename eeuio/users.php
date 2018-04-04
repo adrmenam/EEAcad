@@ -121,12 +121,12 @@ $(document).ready(function(){
 			<!-- User action menu -->
             <ul class="dropdown-menu">
 
-              <li><a href="#/"><i class="icon-user"></i>My profile</a></li>
+              <!-- <li><a href="#/"><i class="icon-user"></i>My profile</a></li>
               <li><a href="#/"><i class="icon-mail"></i>Messages</a></li>
               <li><a href="#"><i class="icon-clipboard"></i>Tasks</a></li>
 			  <li class="divider"></li>
-			  <li><a href="#"><i class="icon-cog"></i>Account settings</a></li>
-			  <li><a href="#"><i class="icon-logout"></i>Logout</a></li>
+			  <li><a href="#"><i class="icon-cog"></i>Account settings</a></li> -->
+			  <li><a href="logout.php"><i class="icon-logout"></i>Logout</a></li>
             </ul>
 			<!-- /user action menu -->
 

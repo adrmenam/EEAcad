@@ -61,10 +61,14 @@
 						<div class="form-group">
 							<input type="password" placeholder="Password" class="form-control" name="password">
 							<?php
-                if(!empty($_SESSION)){
-								        if ($_SESSION["errorsession"]=="errorsession") {
-									         echo '<span class="badge badge-danger">Error al iniciar sesión. Usuario o contraseña incorrectos.</span>';
-								        }
+                if(isset($_SESSION["username"])){
+                        if(isset($_SESSION["errorsession"])){
+  								        if ($_SESSION["errorsession"]=="errorsession") {
+  									         echo '<span class="badge badge-danger">Error al iniciar sesión. Usuario o contraseña incorrectos.</span>';
+  								        }
+                        }
+                }else{
+                  echo "hkdsbacjasd";
                 }
 							 ?>
 						</div>
