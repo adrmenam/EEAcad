@@ -89,8 +89,8 @@
 			<li class="active"><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
       <?php
         if($_SESSION["profile"] === "Estudiante"){
-          echo '<li><a href="toolsMenu.php"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
-          echo '<li><a href="toolsMenu.php"><i class=" icon-graduation-cap"></i><span class="title">Práctica</span></a>';
+          echo '<li><a href="test.php"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
+          echo '<li><a href="practice.php"><i class=" icon-graduation-cap"></i><span class="title">Práctica</span></a>';
         }
       ?>
 		</ul>
@@ -272,7 +272,7 @@
                 echo '<!-- /card photo -->';
                 echo '<!-- Card short description -->';
                 echo '<div class="card-short-description">';
-                  echo '<h5><span class="user-name"><a href="#/">'.$row->HER_NOMBRE.'</a></span></h5>';
+                  echo '<h2><span class="user-name"><a href="#/">'.$row->HER_NOMBRE.'</a></span></h2>';
                   echo '<p class="uppercase">'.$row->HER_DEFINICION.'</p>';
                 echo '</div>';
                 echo '<!-- /card short description -->';
@@ -289,9 +289,9 @@
               echo '</div>';
               echo '<!-- /card header -->';
               echo '<!-- Card content -->';
-              echo '<div class="card-content">';
-                echo '<p>'.$row->HER_CARACTERISTICAS.'</p>';
-              echo '</div>';
+              // echo '<div class="card-content">';
+              //   echo '<p>'.$row->HER_CARACTERISTICAS.'</p>';
+              // echo '</div>';
               echo '<!-- /card content -->';
             echo '</div>';
             echo '<!-- /card -->';
@@ -332,19 +332,21 @@ $res = $mysqli->query($select_tools);
 $modalDetail = 1; //Se suma 1 para controlar las filas, cada 4 un salto de linea y reseteo
 
 while($row = $res->fetch_object()){
+	$caracteristicas=explode("¬",$row->HER_CARACTERISTICAS);
 	echo '<!--Tools Detail-->';
 	echo '<div id="modal-'.$modalDetail.'" class="modal fade" tabindex="-1" role="dialog">';
 	echo '<div class="modal-dialog">';
 		echo '<div class="modal-content">';
 		echo '<div class="modal-header">';
 			echo '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-			echo '<h4 class="modal-title">'.$row->HER_NOMBRE.'</h4>';
+			echo '<h2 class="modal-title">'.$row->HER_NOMBRE.'</h2>';
 		echo '</div>';
 		echo '<div class="modal-body">';
 			echo '<div>';
 				echo '<img title="'.$row->HER_NOMBRE.'" alt="'.$row->HER_NOMBRE.'" src="'.$row->HER_IMAGEN.'">';
-			echo '</div> //Caracteristicas';
-			echo '<p>Caracteristicas:<br>'.$row->HER_CARACTERISTICAS.'</p>';
+			echo '<br><br><br><p><b><h4>Material del que está compuesto:</h4></b>'.$caracteristicas[0].'</p>';
+			echo '<p><b><h4>Voltajes:</h4></b>'.$caracteristicas[1].'</p>';
+			echo '<p><b><h4>Función:</h4></b>'.$caracteristicas[2].'</p>';
 		echo '</div>';
 		echo '</div><!-- /.modal-content -->';
 	echo '</div><!-- /.modal-dialog -->';
