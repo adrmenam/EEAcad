@@ -5,7 +5,7 @@
 <meta name="authoring-tool" content="Adobe_Animate_CC">
 <!-- write your code here -->
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="VestimentaAvatar.js?1524444421122"></script>
+<script src="VestimentaAvatar.js?1525395543432"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
@@ -33,7 +33,7 @@ function handleComplete(evt,comp) {
 	for(i=0; i<ssMetadata.length; i++) {
 		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
 	}
-	exportRoot = new lib.RECUP_VestimentaAvatar();
+	exportRoot = new lib.VestimentaAvatar();
 	stage = new lib.Stage(canvas);	
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
@@ -69,6 +69,8 @@ function handleComplete(evt,comp) {
 			canvas.height = h*pRatio*sRatio;
 			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
 			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			canvas.style.width = '1020px';
+			canvas.style.height = '600px';
 			stage.scaleX = pRatio*sRatio;			
 			stage.scaleY = pRatio*sRatio;			
 			lastW = iw; lastH = ih; lastS = sRatio;            
@@ -77,11 +79,10 @@ function handleComplete(evt,comp) {
 			stage.tickOnUpdate = true;		
 		}
 	}
-	makeResponsive(true,'both',false,1);	
+	makeResponsive(true,'both',false,2);	
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
-}
-</script>
+}</script>
 <!-- write your code here -->
 <html lang="en">
 <head>
@@ -127,8 +128,7 @@ function handleComplete(evt,comp) {
 <![endif]-->
 
 </head>
-<body>
-
+<body onload="init();" style="margin:0px;">
 <!-- Page container -->
 <div class="page-container">
 
@@ -310,14 +310,13 @@ function handleComplete(evt,comp) {
 	<!-- /main header -->
     </script>
 
-<body onload="init();" style="margin:0px;">
-	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:600px; height:600px">
-		<canvas id="canvas" width="600" height="600" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:600px; height:600px; position: absolute; left: 0px; top: 0px; display: block;">
+	<div style="width:600px;weight:600px">
+		<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
+		
+			<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+			<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: absolute; left: 0px; top: 0px; display: block;">
+			</div>
 		</div>
 	</div>
-	<h3>Paso Nº 3 </h3>
-	<h5>Intentos: <input type="text" id="txtIntentos" value="0" maxlength="3" size="1"/></h5>
-	
 </body>
 </html>
