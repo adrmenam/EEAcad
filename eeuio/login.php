@@ -68,7 +68,7 @@
   								        }
                         }
                 }else{
-                  echo "hkdsbacjasd";
+                  echo "";
                 }
 							 ?>
 						</div>
