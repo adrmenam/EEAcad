@@ -89,7 +89,7 @@
 			<li class="active"><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
       <?php
         if($_SESSION["profile"] === "Estudiante"){
-          echo '<li><a href="VestimentaAvatar.html"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
+          echo '<li><a href="test.php"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
           echo '<li><a href="practice.php"><i class=" icon-graduation-cap"></i><span class="title">Práctica</span></a>';
         }
       ?>
@@ -344,7 +344,8 @@ while($row = $res->fetch_object()){
 		echo '<div class="modal-body">';
 			echo '<div>';
 				echo '<img title="'.$row->HER_NOMBRE.'" alt="'.$row->HER_NOMBRE.'" src="'.$row->HER_IMAGEN.'">';
-			echo '<br><br><br><p><b><h4>Material del que está compuesto:</h4></b>'.$caracteristicas[0].'</p>';
+			echo '<br><br><br><p><b><h4>Definición:</h4></b>'.$row->HER_DEFINICION.'</p>';
+			echo '<p><b><h4>Material del que está compuesto:</h4></b>'.$caracteristicas[0].'</p>';
 			echo '<p><b><h4>Voltajes:</h4></b>'.$caracteristicas[1].'</p>';
 			echo '<p><b><h4>Función:</h4></b>'.$caracteristicas[2].'</p>';
 		echo '</div>';
