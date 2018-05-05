@@ -185,7 +185,7 @@
 									<li class="has-sub">
 										<a href="#/"><span class="title">Menu Level 3.1</span></a>
 										<ul class="nav collapse">
-											<li><a href="#/"><span class="title">Menu Level 4.1</span></a></li>
+				pd							<li><a href="#/"><span class="title">Menu Level 4.1</span></a></li>
 										</ul>
 									</li>
 									<li><a href="#/"><span class="title">Menu Level 3.2</span></a></li>
@@ -288,7 +288,7 @@
 				{
 					extend: 'pdfHtml5',
 					exportOptions: {
-						columns: [ 0, 1, 2, 3, 4, 5, 6 ]
+						columns: [ 1, 2, 3, 4, 5 ]
 					}
 				},
 				'colvis'

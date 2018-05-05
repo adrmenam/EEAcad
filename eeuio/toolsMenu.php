@@ -273,7 +273,7 @@
                 echo '<!-- Card short description -->';
                 echo '<div class="card-short-description">';
                   echo '<h2><span class="user-name"><a href="#/">'.$row->HER_NOMBRE.'</a></span></h2>';
-                  echo '<p class="uppercase">'.$row->HER_DEFINICION.'</p>';
+                  //echo '<p class="uppercase">'.$row->HER_DEFINICION.'</p>';
                 echo '</div>';
                 echo '<!-- /card short description -->';
                 echo '<!-- Card action dropdown -->';
