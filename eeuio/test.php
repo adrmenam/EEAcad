@@ -313,8 +313,15 @@ function handleComplete(evt,comp) {
     </div>
 	<!-- /main header -->
     </script>
-
-	<div style="width:600px;weight:600px">
+	<center>
+    <div id="startDiv" style="padding-top:150px;">
+      <form action="startPractice.php" method="post">
+        <h2>Presiona INICIAR para comenzar con el examen del Proceso 1. En este caso al primer error repruebas automaticamente el examen</h2>
+        <button class="btn btn-success btn-lg" type="button" onclick="showDiv()">INICIAR</button>
+      </form>
+    </div>
+  </center>
+	<div id="practiceDiv" style="width:600px;weight:600px;display:none;">
 		<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
 		
 			<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
@@ -322,5 +329,12 @@ function handleComplete(evt,comp) {
 			</div>
 		</div>
 	</div>
+<script>
+    function showDiv() {
+      document.getElementById('practiceDiv').style.display = "block";
+      document.getElementById('startDiv').style.display="none";
+    }
+</script>
 </body>
+
 </html>
