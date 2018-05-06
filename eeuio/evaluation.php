@@ -704,14 +704,22 @@ echo '
 						while($row = $res->fetch_object()){
 							echo '<tr>';
 							//<li><a href="updateuserform.php?ci='.$row->USU_CEDULA.'" >Editar</a></li>
-							echo '<td><a href="evaluation_detail.php?ci='.$row->USU_CEDULA.'&tie='.$row->TIE_NOMBRE.'&fecha='.$row->EXU_FECHA.'">Ver detalles</td>';
+							if($row->TIE_NOMBRE === "Práctica")
+								echo '<td><a href="evaluation_detail.php?ci='.$row->USU_CEDULA.'&tie='.$row->TIE_NOMBRE.'&fecha='.$row->EXU_FECHA.'">Ver detalles</td>';
+							else
+								echo "<td></td>";
 							echo '<td>'.$row->USU_CEDULA.'</td>';
 							echo '<td>'.$row->USU_APELLIDOS.' '.$row->USU_NOMBRES.'</td>';
 							echo '<td>'.$row->TIE_NOMBRE.'</td>';
 							if($row->TIE_NOMBRE === "Práctica")
 								echo "<td></td>";	
-							else
-								echo '<td>'.$row->EXU_RESULTADO.'</td>';
+							else{
+								if($row->EXU_RESULTADO>0){
+									echo '<td>APROBADO</td>';
+								}else{
+									echo '<td>REPROBADO</td>';
+								}
+							}
 							echo '<td name=fecha>'.$row->EXU_FECHA.'</td>';
 							echo "</tr>";
 	          }

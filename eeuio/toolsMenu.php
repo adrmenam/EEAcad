@@ -264,7 +264,7 @@
             echo '<!-- Card -->';
             echo '<div class="card primary-view animated fadeInUp" data-toggle="modal" data-target="#modal-'.$modal.'">';
               echo '<!-- Card header -->';
-              echo '<div class="card-header">';
+              echo '<div class="card-header" style="height:170px">';
                 echo '<!-- Card photo -->';
                 echo '<div class="card-photo">';
                   echo '<img title="'.$row->HER_NOMBRE.'" alt="'.$row->HER_NOMBRE.'" src="'.$row->HER_IMAGEN.'" class="img-circle avatar">';

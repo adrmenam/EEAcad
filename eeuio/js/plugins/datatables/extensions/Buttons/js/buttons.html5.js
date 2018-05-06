@@ -717,7 +717,9 @@ DataTable.ext.buttons.excelHtml5 = {
 //
 // PDF export - using pdfMake - http://pdfmake.org
 //
+
 DataTable.ext.buttons.pdfHtml5 = {
+	
 	className: 'buttons-pdf buttons-html5',
 
 	available: function () {
@@ -740,6 +742,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 					style: 'tableHeader'
 				};
 			} ) );
+			
 		}
 
 		for ( var i=0, ien=data.body.length ; i<ien ; i++ ) {
@@ -802,19 +805,35 @@ DataTable.ext.buttons.pdfHtml5 = {
 		};
 
 		if ( config.message ) {
-			doc.content.unshift( {
-				text: config.message,
-				style: 'message',
-				margin: [ 0, 0, 0, 12 ]
-			} );
+			if(config.exportOptions.flag==2)
+			{
+				doc.content.unshift( {
+					text: 'Nombre: '+config.exportOptions._nombre+'\nFecha: '+config.exportOptions._fecha,
+					style: 'message',
+					margin: [ 0, 0, 0, 12 ]
+				} );
+
+			}
+			
 		}
 
 		if ( config.title ) {
-			doc.content.unshift( {
-				text: _title( config, false ),
-				style: 'title',
-				margin: [ 0, 0, 0, 12 ]
-			} );
+			if(config.exportOptions.flag==2)
+				doc.content.unshift( {
+					text: 'Detalle de Práctica',
+					style: 'title',
+					margin: [ 0, 0, 0, 12 ]
+				} );
+			else{
+				doc.content.unshift( {
+					text: 'Lista de Evaluaciones',
+					style: 'title',
+					margin: [ 0, 0, 0, 12 ]
+				} );
+			}
+				
+				
+			
 		}
 
 		if ( config.customize ) {
@@ -833,6 +852,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 				_saveAs( blob, _filename( config ) );
 			} );
 		}
+		
 	},
 
 	title: '*',
@@ -851,7 +871,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 
 	footer: false,
 
-	message: null,
+	message: '*',
 
 	customize: null,
 

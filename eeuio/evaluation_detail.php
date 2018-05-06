@@ -6,8 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Mouldifi - A fully responsive, HTML5 based admin theme">
 <meta name="keywords" content="Responsive, HTML5, admin theme, business, professional, Mouldifi, web design, CSS3">
-<title>EEUIO | Dashboard</title>
-<!-- Site favicon -->
+<title>Detalle de Evaluaciones </title><!-- Site favicon -->
 <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
 <!-- /site favicon -->
 
@@ -265,11 +264,48 @@
 <script src="js/plugins/datatables/extensions/Buttons/js/buttons.html5.js"></script>
 <script src="js/plugins/datatables/extensions/Buttons/js/buttons.colVis.js"></script>
 
+<?php
+include 'dbconnection.php';
+include 'redirect.php';
+
+if($_GET){
+	$ci=$_GET["ci"];
+	$tie=$_GET["tie"];
+	$fecha=$_GET["fecha"];
+	$sqlIDtie="SELECT * FROM TIPO_EVALUACION WHERE TIE_NOMBRE='".$tie."'";
+	$sqlIDUsu='SELECT * FROM USUARIO WHERE USU_CEDULA='.$ci;
+	$resusu = $mysqli->query($sqlIDUsu);
+	while($row = $resusu->fetch_object()){
+		$IDusu=$row->USU_CODIGO;
+		$nombre=$row->USU_NOMBRES." ".$row->USU_APELLIDOS;
+	}
+
+	$restie = $mysqli->query($sqlIDtie);
+	while($row = $restie->fetch_object()){
+		$IDtie=$row->TIE_CODIGO;
+	}
+	$sqlPaso="";
+	if($IDtie==2){
+		$sqlPaso="SELECT P.PAS_CODIGO,PAS_DESCRIPCION,PAS_INDICACIONES,PXU_ACIERTO FROM PASO P,PASXUSU PU 
+		WHERE P.PAS_CODIGO=PU.PAS_CODIGO AND USU_CODIGO=".$IDusu." AND TIE_CODIGO=".$IDtie.";";
+	}else{
+		$sqlPaso="SELECT P.PAS_CODIGO,PAS_DESCRIPCION,PAS_INDICACIONES,PXU_INTENTOS FROM PASO P,PASXUSU PU 
+		WHERE P.PAS_CODIGO=PU.PAS_CODIGO AND USU_CODIGO=".$IDusu." AND TIE_CODIGO=".$IDtie.";";
+	}
+
+
+}
+?>
 <!--ChartJs-->
+
 <script src="js/plugins/chartjs/Chart.min.js"></script>
 <script>
-
+	
 	$(document).ready(function () {
+		var nombre = "<?php echo $nombre ?>";
+		var fecha = "<?php echo $fecha ?>";
+		var tie = "<?php echo $tie ?>";
+		//$('.dataTables-example').getFlag(2);
 		$('.dataTables-example').DataTable({
 			dom: '<"html5buttons" B>lTfgitp',
 			buttons: [
@@ -288,12 +324,20 @@
 				{
 					extend: 'pdfHtml5',
 					exportOptions: {
-						columns: [ 0, 1, 2 ]
+						columns: [ 0, 1, 2 ],
+						_nombre: nombre,
+						_fecha: fecha,
+						_tie: tie,
+						flag: 2
 					}
 				},
 				'colvis'
 			]
+			
+			
+			//alert(num);
 		});
+		
 		var $checkbox = $('.todo-list .checkbox input[type=checkbox]');
 
 		$checkbox.change(function () {
@@ -663,37 +707,6 @@
 </html>
 
 <?php
-include 'dbconnection.php';
-include 'redirect.php';
-
-if($_GET){
-	$ci=$_GET["ci"];
-	$tie=$_GET["tie"];
-	$fecha=$_GET["fecha"];
-	$sqlIDtie="SELECT * FROM TIPO_EVALUACION WHERE TIE_NOMBRE='".$tie."'";
-	$sqlIDUsu='SELECT * FROM USUARIO WHERE USU_CEDULA='.$ci;
-	$resusu = $mysqli->query($sqlIDUsu);
-	while($row = $resusu->fetch_object()){
-		$IDusu=$row->USU_CODIGO;
-		$nombre=$row->USU_NOMBRES." ".$row->USU_APELLIDOS;
-	}
-
-	$restie = $mysqli->query($sqlIDtie);
-	while($row = $restie->fetch_object()){
-		$IDtie=$row->TIE_CODIGO;
-	}
-	$sqlPaso="";
-	if($IDtie==2){
-		$sqlPaso="SELECT P.PAS_CODIGO,PAS_DESCRIPCION,PAS_INDICACIONES,PXU_ACIERTO FROM PASO P,PASXUSU PU 
-		WHERE P.PAS_CODIGO=PU.PAS_CODIGO AND USU_CODIGO=".$IDusu." AND TIE_CODIGO=".$IDtie.";";
-	}else{
-		$sqlPaso="SELECT P.PAS_CODIGO,PAS_DESCRIPCION,PAS_INDICACIONES,PXU_INTENTOS FROM PASO P,PASXUSU PU 
-		WHERE P.PAS_CODIGO=PU.PAS_CODIGO AND USU_CODIGO=".$IDusu." AND TIE_CODIGO=".$IDtie.";";
-	}
-
-
-}
-
 
 echo '
 <h1 class="page-title">Detalle de Evaluacion</h1>
@@ -722,7 +735,8 @@ echo'			</div>
 			<div class="panel-body">
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover dataTables-example" >
-						<thead>
+						
+					<thead>
 							<tr>
 								
 								<th>Número de Paso</th>
@@ -739,8 +753,8 @@ echo'			</div>
 						$res = $mysqli->query($sqlPaso);
 						while($row = $res->fetch_object()){
 							echo '<tr>';
+							echo '<td>'.$row->PAS_CODIGO.'</td>';
 							echo '<td>'.$row->PAS_DESCRIPCION.'</td>';
-							echo '<td>'.$row->PAS_INDICACIONES.'</td>';
 							if($IDtie==2){
 								echo '<td>'.$row->PXU_ACIERTO.'</td>';
 							}else{
