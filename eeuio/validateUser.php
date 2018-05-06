@@ -9,18 +9,18 @@ if($_POST){
   $res = $mysqli->query($sql);
   while ($row = $res->fetch_object()) {
      $flag = true;
-     $_SESSION["code"] = $row->USU_CODIGO;
+     
      if($row->USU_ROL === "Estudiante"){
        session_start();
        $_SESSION["username"] = $row->USU_NOMBRES." ".$row->USU_APELLIDOS;
        $_SESSION["profile"] = $row->USU_ROL;
-       
+       $_SESSION["user_code"] = $row->USU_CODIGO;
        redirect("toolsMenu.php");
      }else if ($row->USU_ROL === "Administrador") {
        session_start();
        $_SESSION["username"] = $row->USU_NOMBRES." ".$row->USU_APELLIDOS;
        $_SESSION["profile"] = $row->USU_ROL;
-       
+       $_SESSION["user_code"] = $row->USU_CODIGO;
        redirect("users.php");
      }
 }

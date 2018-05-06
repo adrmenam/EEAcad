@@ -1,7 +1,7 @@
 <?php
   session_start();
   include 'dbconnection.php';
-  $Usuario=$_SESSION['code'];
+  $Usuario=$_SESSION["user_code"];
 ?>
 <!DOCTYPE html>
 <meta name="authoring-tool" content="Adobe_Animate_CC">
