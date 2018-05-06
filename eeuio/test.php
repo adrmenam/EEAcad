@@ -1,5 +1,7 @@
 <?php
   session_start();
+  include 'dbconnection.php';
+  $Usuario=$_SESSION["user_code"];
 ?>
 <!DOCTYPE html>
 <meta name="authoring-tool" content="Adobe_Animate_CC">
@@ -8,7 +10,9 @@
 <script src="VestimentaAvatar.js?1525395543432"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+var usuario="<?php echo $Usuario?>";
 function init() {
+	alert(usuario);
 	canvas = document.getElementById("canvas");
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
@@ -172,7 +176,7 @@ function handleComplete(evt,comp) {
         if($_SESSION["profile"] === "Estudiante"){
           echo '<li class="active"><a href="test.php"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
           echo '<li ><a href="practice.php"><i class=" icon-graduation-cap"></i><span class="title">Práctica</span></a>';
-        }
+		}
       ?>
 		</ul>
 		<!-- /main navigation -->
@@ -309,8 +313,15 @@ function handleComplete(evt,comp) {
     </div>
 	<!-- /main header -->
     </script>
-
-	<div style="width:600px;weight:600px">
+	<center>
+    <div id="startDiv" style="padding-top:150px;">
+      <form action="startPractice.php" method="post">
+        <h2>Presiona INICIAR para comenzar con el examen del Proceso 1. En este caso al primer error repruebas automaticamente el examen</h2>
+        <button class="btn btn-success btn-lg" type="button" onclick="showDiv()">INICIAR</button>
+      </form>
+    </div>
+  </center>
+	<div id="practiceDiv" style="width:600px;weight:600px;display:none;">
 		<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
 		
 			<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
@@ -318,5 +329,12 @@ function handleComplete(evt,comp) {
 			</div>
 		</div>
 	</div>
+<script>
+    function showDiv() {
+      document.getElementById('practiceDiv').style.display = "block";
+      document.getElementById('startDiv').style.display="none";
+    }
+</script>
 </body>
+
 </html>
