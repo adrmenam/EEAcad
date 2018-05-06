@@ -1,5 +1,6 @@
 <?php
   session_start();
+  include 'dbconnection.php';
 ?>
 ﻿<!DOCTYPE html>
 <html lang="en">
@@ -249,7 +250,7 @@
 		<!-- Card grid view -->
 		<div class="cards-container grid-view">
       <?php
-        include 'dbconnection.php';
+        //include 'dbconnection.php';
         $res = $mysqli->query($select_tools);
         $cont = 0; //Se suma 1 para controlar las filas, cada 4 un salto de linea y reseteo
         $index_value = 50; //Se resta de 1 en 1
@@ -259,7 +260,6 @@
           if($cont == 0){
             echo '<div class="row">';
           }
-          //echo '<p>'.$row->HER_NOMBRE.'<p>';
           echo '<div class="col-lg-3 col-sm-6 animatedParent animateOnce z-index-'.$index_value.'">';
             echo '<!-- Card -->';
             echo '<div class="card primary-view animated fadeInUp" data-toggle="modal" data-target="#modal-'.$modal.'">';
@@ -289,9 +289,9 @@
               echo '</div>';
               echo '<!-- /card header -->';
               echo '<!-- Card content -->';
-              // echo '<div class="card-content">';
-              //   echo '<p>'.$row->HER_CARACTERISTICAS.'</p>';
-              // echo '</div>';
+              //echo '<div class="card-content">';
+              //  echo '<p>'.$row->HER_CARACTERISTICAS.'</p>';
+              //echo '</div>';
               echo '<!-- /card content -->';
             echo '</div>';
             echo '<!-- /card -->';
@@ -327,7 +327,7 @@
 <!-- /page container -->
 
 <?php
-include 'dbconnection.php';
+//include 'dbconnection.php';
 $res = $mysqli->query($select_tools);
 $modalDetail = 1; //Se suma 1 para controlar las filas, cada 4 un salto de linea y reseteo
 
@@ -342,12 +342,11 @@ while($row = $res->fetch_object()){
 			echo '<h2 class="modal-title">'.$row->HER_NOMBRE.'</h2>';
 		echo '</div>';
 		echo '<div class="modal-body">';
-			echo '<div>';
-				echo '<img title="'.$row->HER_NOMBRE.'" alt="'.$row->HER_NOMBRE.'" src="'.$row->HER_IMAGEN.'">';
+			echo '<img title="'.$row->HER_NOMBRE.'" alt="'.$row->HER_NOMBRE.'" src="'.$row->HER_IMAGEN.'">';
 			echo '<br><br><br><p><b><h4>Definición:</h4></b>'.$row->HER_DEFINICION.'</p>';
-			echo '<p><b><h4>Material del que está compuesto:</h4></b>'.$caracteristicas[0].'</p>';
-			echo '<p><b><h4>Voltajes:</h4></b>'.$caracteristicas[1].'</p>';
-			echo '<p><b><h4>Función:</h4></b>'.$caracteristicas[2].'</p>';
+		  echo '<p><b><h4>Material del que está compuesto:</h4></b>'.$caracteristicas[0].'</p>';
+		  echo '<p><b><h4>Voltajes:</h4></b>'.$caracteristicas[1].'</p>';
+		  echo '<p><b><h4>Función:</h4></b>'.$caracteristicas[2].'</p>';
 		echo '</div>';
 		echo '</div><!-- /.modal-content -->';
 	echo '</div><!-- /.modal-dialog -->';
