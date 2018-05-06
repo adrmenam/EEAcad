@@ -90,7 +90,7 @@
 			<li class="active"><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
       <?php
         if($_SESSION["profile"] === "Estudiante"){
-          echo '<li><a href="test.php"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
+          echo '<li><a href="intro_test.php"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
           echo '<li><a href="practice.php"><i class=" icon-graduation-cap"></i><span class="title">Práctica</span></a>';
         }
       ?>

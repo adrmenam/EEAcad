@@ -1,93 +1,8 @@
 <?php
   session_start();
   include 'dbconnection.php';
-  $Usuario=$_SESSION['code'];
 ?>
-<!DOCTYPE html>
-<meta name="authoring-tool" content="Adobe_Animate_CC">
-<!-- write your code here -->
-<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="VestimentaAvatar.js?1525395543432"></script>
-<script>
-var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-var usuario="<?php echo $Usuario?>";
-function init() {
-	alert(usuario);
-	canvas = document.getElementById("canvas");
-	anim_container = document.getElementById("animation_container");
-	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("CBF65291F1453B498591E6CEEB144335");
-	var lib=comp.getLibrary();
-	var loader = new createjs.LoadQueue(false);
-	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
-	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
-	var lib=comp.getLibrary();
-	loader.loadManifest(lib.properties.manifest);
-}
-function handleFileLoad(evt, comp) {
-	var images=comp.getImages();	
-	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
-}
-function handleComplete(evt,comp) {
-	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	var lib=comp.getLibrary();
-	var ss=comp.getSpriteSheet();
-	var queue = evt.target;
-	var ssMetadata = lib.ssMetadata;
-	for(i=0; i<ssMetadata.length; i++) {
-		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
-	}
-	exportRoot = new lib.VestimentaAvatar();
-	stage = new lib.Stage(canvas);	
-	//Registers the "tick" event listener.
-	fnStartAnimation = function() {
-		stage.addChild(exportRoot);
-		createjs.Ticker.setFPS(lib.properties.fps);
-		createjs.Ticker.addEventListener("tick", stage);
-	}	    
-	//Code to support hidpi screens and responsive scaling.
-	function makeResponsive(isResp, respDim, isScale, scaleType) {		
-		var lastW, lastH, lastS=1;		
-		window.addEventListener('resize', resizeCanvas);		
-		resizeCanvas();		
-		function resizeCanvas() {			
-			var w = lib.properties.width, h = lib.properties.height;			
-			var iw = window.innerWidth, ih=window.innerHeight;			
-			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
-			if(isResp) {                
-				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
-					sRatio = lastS;                
-				}				
-				else if(!isScale) {					
-					if(iw<w || ih<h)						
-						sRatio = Math.min(xRatio, yRatio);				
-				}				
-				else if(scaleType==1) {					
-					sRatio = Math.min(xRatio, yRatio);				
-				}				
-				else if(scaleType==2) {					
-					sRatio = Math.max(xRatio, yRatio);				
-				}			
-			}			
-			canvas.width = w*pRatio*sRatio;			
-			canvas.height = h*pRatio*sRatio;
-			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
-			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
-			canvas.style.width = '1020px';
-			canvas.style.height = '600px';
-			stage.scaleX = pRatio*sRatio;			
-			stage.scaleY = pRatio*sRatio;			
-			lastW = iw; lastH = ih; lastS = sRatio;            
-			stage.tickOnUpdate = false;            
-			stage.update();            
-			stage.tickOnUpdate = true;		
-		}
-	}
-	makeResponsive(true,'both',false,2);	
-	AdobeAn.compositionLoaded(lib.properties.id);
-	fnStartAnimation();
-}</script>
-<!-- write your code here -->
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -95,7 +10,7 @@ function handleComplete(evt,comp) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Mouldifi - A fully responsive, HTML5 based admin theme">
 <meta name="keywords" content="Responsive, HTML5, admin theme, business, professional, Mouldifi, web design, CSS3">
-<title>EEAcad | Examen</title>
+<title>Herramientas | Menu</title>
 <!-- Site favicon -->
 <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
 <!-- /site favicon -->
@@ -132,7 +47,8 @@ function handleComplete(evt,comp) {
 <![endif]-->
 
 </head>
-<body onload="init();" style="margin:0px;">
+<body>
+
 <!-- Page container -->
 <div class="page-container">
 
@@ -171,12 +87,12 @@ function handleComplete(evt,comp) {
     			echo '</li>';
         }
       ?>
-			<li><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
+			<li class="active"><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
       <?php
         if($_SESSION["profile"] === "Estudiante"){
-          echo '<li class="active"><a href="test.php"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
-          echo '<li ><a href="practice.php"><i class=" icon-graduation-cap"></i><span class="title">Práctica</span></a>';
-		}
+          echo '<li><a href="intro_test.php"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
+          echo '<li><a href="practice.php"><i class=" icon-graduation-cap"></i><span class="title">Práctica</span></a>';
+        }
       ?>
 		</ul>
 		<!-- /main navigation -->
@@ -312,15 +228,61 @@ function handleComplete(evt,comp) {
       </div>
     </div>
 	<!-- /main header -->
-    </script>
 
-	<div style="width:600px;weight:600px">
-		<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
-		
-			<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-			<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: absolute; left: 0px; top: 0px; display: block;">
+	<!-- Secondary header -->
+	<div class="header-secondary row gray-bg">
+		<div class="col-lg-12">
+			<div class="page-heading clearfix">
+				<h1 class="page-title pull-left">Empezar Prueba</h1>
 			</div>
+			<!-- Breadcrumb -->
+			<ol class="breadcrumb breadcrumb-2">
+				<!-- <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li> -->
+				<!-- <li><a href="short-view.html">Grid Views</a></li> 
+				<li class="active"><strong>Herramientas</strong></li>-->
+			</ol>
 		</div>
 	</div>
+	<!-- /secondary header -->
+
+	<!-- Main content -->
+	<div class="main-content">
+		<!-- Card grid view -->
+		<form action="test.php" method="post">
+            <h3><b>Descripción:</b><br><br><br>La prueba consta de 20 pasos donde usted deberá arrastrar los componentes correspondientes al proceso determinado, para aprobar tiene que realizar todos los pasos correctamente, caso contrario reprobará</h3>
+            <input type="submit" value="Iniciar">
+        </form>
+		<!-- Footer -->
+		<footer class="animatedParent animateOnce z-index-10">
+			<div class="footer-main animated fadeInUp slow">&copy; 2018 <strong>EEUIO</strong> by <a target="_blank" href="#/">KAY Innovation</a> </div>
+
+		</footer>
+		<!-- /footer -->
+
+	  </div>
+	  <!-- /main content -->
+
+  </div>
+  <!-- /main container -->
+
+</div>
+<!-- /page container -->
+
+
+<!--Load JQuery-->
+<script src="js/jquery.min.js"></script>
+<!-- Load CSS3 Animate It Plugin JS -->
+<script src="js/plugins/css3-animate-it-plugin/css3-animate-it.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/generalScript.js"></script>
+<script src="js/plugins/metismenu/jquery.metisMenu.js"></script>
+<!-- Select2-->
+<script src="js/plugins/select2/select2.full.min.js"></script>
+<script src="js/functions.js"></script>
+<script>
+	$(document).ready(function () {
+		$(".select2").select2();
+	});
+</script>
 </body>
 </html>
