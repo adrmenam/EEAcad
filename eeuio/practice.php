@@ -318,7 +318,6 @@ function handleComplete(evt,comp) {
       <form action="startPractice.php" method="post">
         <h2>Presiona INICIAR para comenzar con la práctica del Proceso 1</h2>
         <input hidden id="username" name="username" type="text" value="<?php echo "$Usuario" ?>"/>
-        <input hidden id="number" name="type" type="text" value="1"/>
         <button id="startPractice" class="btn btn-success btn-lg" type="submit">INICIAR</button>
       </form>
     </div>

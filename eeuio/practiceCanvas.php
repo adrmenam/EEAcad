@@ -315,7 +315,7 @@ function handleComplete(evt,comp) {
 
 
   <!--Canvas Animate-->
-	<div id="practiceDiv"style="width:600px;weight:600px;display:none;">
+	<div id="practiceDiv" style="width:600px;weight:600px;">
 		<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
 
 			<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
