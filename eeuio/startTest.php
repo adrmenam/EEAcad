@@ -1,9 +1,38 @@
+<!DOCTYPE html>
 <?php
   session_start();
-  include 'dbconnection.php';
-  $Usuario=$_SESSION["user_code"];
+  
+include 'dbconnection.php';
+$Usuario=$_SESSION["user_code"];
+date_default_timezone_set('America/Guayaquil');
+$date = date('Y-m-d H:i:s', time());
+echo $date;
+$sql = "INSERT INTO EVAXUSU (EXU_FECHA, EVA_CODIGO, USU_CODIGO,TIE_CODIGO, EXU_RESULTADO, EXU_OBSERVACION, EXU_FIN)
+VALUES ('".$date."',1,".$Usuario.",2,0,'Reprobado',0)";
+
+if ($mysqli->query($sql) === TRUE) {
+    
+} else {
+
+    echo "Error: " . $sql . "<br>" . $mysqli->error;
+}
+
+$mysqli->close();
+if($_POST){
+    
+    
+    
+    //include 'dbconnection.php';
+      
+    
+ 
+    
+
+}
+
 ?>
-<!DOCTYPE html>
+
+
 <meta name="authoring-tool" content="Adobe_Animate_CC">
 <!-- write your code here -->
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
@@ -314,15 +343,9 @@ function handleComplete(evt,comp) {
 	<!-- /main header -->
     </script>
 	<center>
-    <div id="startDiv" style="padding-top:150px;">
-	<form action="startTest.php" method="post">
-	 	<h2>Presiona INICIAR para comenzar con el examen del Proceso 1. En este caso al primer error repruebas automáticamente el examen</h2>
-		
-		<input class="btn btn-success btn-lg" type="submit" value="INICIAR">
-    </form>
-    </div>
+    
   </center>
-	<div id="practiceDiv" style="width:600px;weight:600px;display:none;">
+	<div id="practiceDiv" style="width:600px;weight:600px;">
 		<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
 		
 			<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
