@@ -337,6 +337,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 	// timeline functions:
 	this.frame_0 = function() {
+		alert("Frame 0");
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -386,6 +387,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_1 = function() {
+		alert("Frame 1");
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -440,6 +442,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_2 = function() {
+		alert("Frame 2");
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -494,6 +497,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_3 = function() {
+		alert("Frame 3");
 		this.stop();
 		this.btnNext.on("mousedown" , onMouseDown.bind(this));
 		
@@ -503,6 +507,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_4 = function() {
+		alert("Frame 4");
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -555,6 +560,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_5 = function() {
+		alert("Frame 5");
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -605,6 +611,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_6 = function() {
+		alert("Frame 6");
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -659,6 +666,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_7 = function() {
+		alert("Frame 7");
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -714,6 +722,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_8 = function() {
+		alert("Frame 8");
 		this.stop();
 		this.btnNext.on("mousedown" , onMouseDown.bind(this));
 		function onMouseDown(evt){

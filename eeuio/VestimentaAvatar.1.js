@@ -1,5 +1,9 @@
+function VerificarFlag(){
+	
+	location.href ="endTestFailed.php";
+}
 (function (cjs, an) {
-
+	var flag=true;
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
@@ -258,7 +262,9 @@ lib.ssMetadata = [
 
 (lib.VarillaPasoFinal = function() {
 	this.spriteSheet = ss["VestimentaAvatar_atlas_"];
+	
 	this.gotoAndStop(35);
+	//location.href ="endTestCorrect.php";
 }).prototype = p = new cjs.Sprite();
 // helper functions:
 
@@ -869,7 +875,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				alert("Examen");
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -924,7 +931,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -977,7 +985,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1045,7 +1054,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				alert("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1100,7 +1110,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				alert("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1156,7 +1167,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1209,7 +1221,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1264,8 +1277,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.boton.visible = true;
 			}
 			else{
-				//Proceso de error
-				alert("Error " + nombre[0]);
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1283,6 +1296,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_10 = function() {
+		
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -1322,8 +1336,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.visible = false;
 			}
 			else{
-				//Porceso de equivocacion
-				alert("Error");
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1349,8 +1363,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.cpinza.x, item.cpinza.y, item.objective.cobjective02);
 			if(item.manta.visible == true){
-				//Porceso de equivocacion
-				alert("Error " + nombre[0]);
+				flag=false;
+				VerificarFlag();
 			}
 			else{
 				if(item.objective.cobjective02.hitTest(pt.x, pt.y)){
@@ -1360,8 +1374,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 					item.boton.visible = true;
 				}
 				else{
-					//Porceso de equivocacion
-					alert("Error "  + nombre[0]);
+					flag=false;
+					VerificarFlag();
 				}
 			}
 		}
@@ -1377,10 +1391,12 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 		
 		function onButtonUP(evt){
-			this.gotoAndStop(11)
+			//this.gotoAndStop(11);
+			location.href ="endTestCorrect.php";
 		}
 	}
 	this.frame_11 = function() {
+		
 		this.stop();
 		createjs.Touch.enable(stage);
 		var ix 
@@ -1436,7 +1452,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			var item = evt.currentTarget;
 				item.x = ix
 				item.y = iy
-				alert("error");
+				flag=false;
+				VerificarFlag();
 		}
 		function onMouseMoveWrong(evt){
 			var item = evt.currentTarget;
@@ -1450,6 +1467,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_12 = function() {
+		
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -1490,7 +1508,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1547,7 +1566,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1604,7 +1624,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1621,6 +1642,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_15 = function() {
+		
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -1658,7 +1680,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -1675,6 +1698,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 	}
 	this.frame_16 = function() {
+		
 		this.stop();
 		createjs.Touch.enable(stage);
 		
@@ -1706,7 +1730,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
