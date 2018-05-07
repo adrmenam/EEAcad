@@ -1,5 +1,7 @@
 <?php
   session_start();
+  include 'dbconnection.php';
+  $Usuario=$_SESSION["user_code"];
 ?>
 <!DOCTYPE html>
 <meta name="authoring-tool" content="Adobe_Animate_CC">
@@ -315,28 +317,15 @@ function handleComplete(evt,comp) {
     <div id="startDiv" style="padding-top:150px;">
       <form action="startPractice.php" method="post">
         <h2>Presiona INICIAR para comenzar con la práctica del Proceso 1</h2>
-        <!--<input id="username" name="username" type="text" value="<?php $_SESSION['profile'] ?>"/>-->
-
-        <input hidden id="type" name="type" type="text" value="practica"/>
-        <button class="btn btn-success btn-lg" type="submit" onclick="showDiv()">INICIAR</button>
+        <input hidden id="username" name="username" type="text" value="<?php echo "$Usuario" ?>"/>
+        <button id="startPractice" class="btn btn-success btn-lg" type="submit">INICIAR</button>
       </form>
     </div>
   </center>
 
-  <!--Canvas Animate-->
-	<div id="practiceDiv"style="width:600px;weight:600px;display:none;">
-		<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
 
-			<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-			<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: absolute; left: 0px; top: 0px; display: block;">
-			</div>
-		</div>
-	</div>
-  <script>
-    function showDiv() {
-      document.getElementById('practiceDiv').style.display = "block";
-      document.getElementById('startDiv').style.display="none";
-    }
-  </script>
+
+
+
 </body>
 </html>
