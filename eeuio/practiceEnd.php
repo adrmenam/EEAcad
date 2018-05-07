@@ -15,6 +15,9 @@
     while($row = $resfecha->fetch_object()){
         $fecha_max=$row->FECHA_MAX;
     }
+
+    
+
     $sql = "UPDATE EVAXUSU SET EXU_FIN=1, EXU_RESULTADO=".$ftotal." WHERE TIE_CODIGO=1 AND EVA_CODIGO=1 AND
     USU_CODIGO=".$Usuario." AND EXU_FECHA='".$fecha_max."';";
     //echo $sql;
@@ -24,9 +27,9 @@
           echo "Error: " . $sql . "<br>" . $mysqli->error;
       }
 
-      $mysqli->close();
 
-      $sql1 = "INSERT INTO PASXUSU VALUES (1,1,".$Usuario.",".$fecha_max.",1,".$f1.",null)";
+
+      $sql1 = "INSERT INTO PASXUSU VALUES (1,1,".$Usuario.",'".$fecha_max."',1,".$f1.",null)";
 
         if ($mysqli->query($sql1) === TRUE) {
             echo "Paso 1 guardado exitosamente";
@@ -34,9 +37,9 @@
             echo "Error: " . $sql1 . "<br>" . $mysqli->error;
         }
 
-        $mysqli->close();
 
-        $sql2 = "INSERT INTO PASXUSU VALUES (2,1,".$Usuario.",".$fecha_max.",1,".$f2.",null)";
+
+        $sql2 = "INSERT INTO PASXUSU VALUES (2,1,".$Usuario.",'".$fecha_max."',1,".$f2.",null)";
 
           if ($mysqli->query($sql2) === TRUE) {
               echo "Paso 2 guardado exitosamente";
@@ -44,9 +47,9 @@
               echo "Error: " . $sql2 . "<br>" . $mysqli->error;
           }
 
-          $mysqli->close();
 
-          $sql3 = "INSERT INTO PASXUSU VALUES (3,1,".$Usuario.",".$fecha_max.",1,".$f3.",null)";
+
+          $sql3 = "INSERT INTO PASXUSU VALUES (3,1,".$Usuario.",'".$fecha_max."',1,".$f3.",null)";
 
             if ($mysqli->query($sql3) === TRUE) {
                 echo "Paso 3 guardado exitosamente";
@@ -54,9 +57,9 @@
                 echo "Error: " . $sql3 . "<br>" . $mysqli->error;
             }
 
-            $mysqli->close();
 
-            $sql4 = "INSERT INTO PASXUSU VALUES (4,1,".$Usuario.",".$fecha_max.",1,".$f4.",null)";
+
+            $sql4 = "INSERT INTO PASXUSU VALUES (4,1,".$Usuario.",'".$fecha_max."',1,".$f4.",null)";
 
               if ($mysqli->query($sql4) === TRUE) {
                   echo "Paso 4 guardado exitosamente";
@@ -64,9 +67,9 @@
                   echo "Error: " . $sql4 . "<br>" . $mysqli->error;
               }
 
-              $mysqli->close();
 
-              $sql5 = "INSERT INTO PASXUSU VALUES (5,1,".$Usuario.",".$fecha_max.",1,".$f5.",null)";
+
+              $sql5 = "INSERT INTO PASXUSU VALUES (5,1,".$Usuario.",'".$fecha_max."',1,".$f5.",null)";
 
                 if ($mysqli->query($sql5) === TRUE) {
                     echo "Paso 5 guardado exitosamente";
