@@ -1,7 +1,7 @@
 (function (cjs, an) {
 
 var p; // shortcut to reference prototypes
-var lib={};var ss={};var img={};
+var lib={};var ss={};var img={}; var fails=[0,0,0,0,0];
 lib.ssMetadata = [
 		{name:"VestimentaAvatar_atlas_", frames: [[7117,5494,530,398],[7688,1452,233,457],[1922,2164,1920,1080],[5610,5105,841,904],[3844,2164,1920,1080],[3844,1082,1920,1080],[5766,1082,1920,1080],[1357,5252,512,512],[3219,5203,523,717],[0,5458,1355,204],[0,5252,1355,204],[0,2164,1920,1080],[0,1082,1920,1080],[1922,1082,1920,1080],[0,0,1920,1080],[1922,0,1920,1080],[3844,0,1920,1080],[5766,0,1920,1080],[3844,3246,1920,1080],[6453,5105,1667,387],[6453,5494,662,417],[1921,5203,756,549],[5766,2164,1920,1080],[7688,1911,288,364],[7688,0,451,806],[2679,5203,538,752],[3842,5105,1766,607],[5763,4328,1919,775],[3842,4328,1919,775],[0,4328,1919,922],[1921,4328,1919,873],[0,5664,613,253],[7688,808,303,642],[5766,3246,1920,1080],[1922,3246,1920,1080],[0,3246,1920,1080]]}
 ];
@@ -833,22 +833,22 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_0 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.varilla.on("mousedown" , onMouseDown.bind(this));
 		this.varilla.on("pressmove" , onMouseMove.bind(this));
 		this.varilla.on("pressup" , onMouseUp.bind(this));
 		this.varilla.objective = this.objective1;
-		
+
 		this.pinzaIzq.on("mousedown" , onMouseDown.bind(this));
 		this.pinzaIzq.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.pinzaDer1.on("mousedown" , onMouseDown.bind(this));
 		this.pinzaDer1.on("pressmove" , onMouseMove.bind(this));
-		
-		
+
+
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -856,10 +856,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
 			if(item.objective.box.hitTest(pt.x, pt.y)){
@@ -869,16 +869,17 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				alert("Practica");
+				fails[0]+=1;
+				console.log(fails);
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -888,17 +889,17 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_1 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.pinzaIzq.on("mousedown" , onMouseDown.bind(this));
 		this.pinzaIzq.on("pressmove" , onMouseMove.bind(this));
 		this.pinzaIzq.on("pressup" , onMouseUp.bind(this));
 		this.pinzaIzq.objective = this.objective1;
-		
+
 		this.pinzaDer2.on("mousedown" , onMouseDown.bind(this));
 		this.pinzaDer2.on("pressmove" , onMouseMove.bind(this));
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -906,10 +907,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
 			console.log(item.objective.x)
@@ -924,16 +925,17 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				fails[1]+=1;
+				console.log(fails);
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -943,15 +945,15 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_2 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.pinzaDer.on("mousedown" , onMouseDown.bind(this));
 		this.pinzaDer.on("pressmove" , onMouseMove.bind(this));
 		this.pinzaDer.on("pressup" , onMouseUp.bind(this));
 		this.pinzaDer.objective = this.objective1;
-		
+
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -959,10 +961,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
 			console.log(item.objective.x)
@@ -977,16 +979,17 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				fails[1]+=1;
+				console.log(fails);
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -996,7 +999,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_3 = function() {
 		this.stop();
 		this.btnNext.on("mousedown" , onMouseDown.bind(this));
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
 			this.gotoAndStop(4)
@@ -1005,23 +1008,23 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_4 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.casco.on("mousedown" , onMouseDown.bind(this));
 		this.casco.on("pressmove" , onMouseMove.bind(this));
 		this.casco.on("pressup" , onMouseUp.bind(this));
 		this.casco.objective = this.objective1;
-		
+
 		this.arnes1.on("mousedown" , onMouseDown.bind(this));
 		this.arnes1.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.mangas.on("mousedown" , onMouseDown.bind(this));
 		this.mangas.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.guantes.on("mousedown" , onMouseDown.bind(this));
 		this.guantes.on("pressmove" , onMouseMove.bind(this));
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -1029,15 +1032,15 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			console.log(item.dot.x)
 			console.log(item.dot.y)
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
-			
+
 			if(item.objective.box.hitTest(pt.x, pt.y)){
 				item.x = item.objective.x;
 				item.y = item.objective.y;
@@ -1045,16 +1048,17 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				alert("Error")
+				fails[2]+=1;
+				console.log(fails);
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -1064,21 +1068,21 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_5 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.mangas.on("mousedown" , onMouseDown.bind(this));
 		this.mangas.on("pressmove" , onMouseMove.bind(this));
 		this.mangas.on("pressup" , onMouseUp.bind(this));
 		this.mangas.objective = this.objective1;
-		
+
 		this.arnes2.on("mousedown" , onMouseDown.bind(this));
 		this.arnes2.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.guantes.on("mousedown" , onMouseDown.bind(this));
 		this.guantes.on("pressmove" , onMouseMove.bind(this));
-		
+
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -1086,13 +1090,13 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot1.x, item.dot1.y , item.objective.box);
-			
+
 			if(item.objective.box.hitTest(pt.x, pt.y)){
 				item.x = item.objective.x;
 				item.y = item.objective.y;
@@ -1100,16 +1104,18 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				alert("Error")
+				fails[2]+=1;
+				console.log(fails);
+
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -1119,18 +1125,18 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_6 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.guantes.on("mousedown" , onMouseDown.bind(this));
 		this.guantes.on("pressmove" , onMouseMove.bind(this));
 		this.guantes.on("pressup" , onMouseUp.bind(this));
 		this.guantes.objective = this.objective1;
-		
+
 		this.arnes3.on("mousedown" , onMouseDown.bind(this));
 		this.arnes3.on("pressmove" , onMouseMove.bind(this));
-		
+
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -1138,10 +1144,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot1.x, item.dot1.y , item.objective.box);
 			console.log(item.objective.x)
@@ -1156,16 +1162,17 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				fails[2]+=1;
+				console.log(fails);
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -1175,15 +1182,15 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_7 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.arnes.on("mousedown" , onMouseDown.bind(this));
 		this.arnes.on("pressmove" , onMouseMove.bind(this));
 		this.arnes.on("pressup" , onMouseUp.bind(this));
 		this.arnes.objective = this.objective1;
-		
+
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -1191,10 +1198,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
 			console.log(item.objective.x)
@@ -1209,16 +1216,17 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				fails[2]+=1;
+				console.log(fails);
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -1236,7 +1244,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_9 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.cobertor.on("mousedown", onMouseDown.bind(this));
 		this.cobertor.on("pressup", onMouseUp.bind(this));
 		this.cobertor.on("pressmove", onMouseMove.bind(this));
@@ -1244,7 +1252,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		this.cobertor.objective = this.objective;
 		this.cobertor.result = this.result;
 		this.cobertor.boton = this.btnNextJ1;
-		
+
 		function onMouseDown(evt){
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
@@ -1253,7 +1261,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			item.offset.y = pt.y - item.y;
 			item.drag = true;
 		}
-		
+
 		function onMouseUp(evt){
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.ccobertor.x, item.ccobertor.y, item.objective.cobjective);
@@ -1265,10 +1273,11 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}
 			else{
 				//Proceso de error
-				alert("Error " + nombre[0]);
+				fails[3]+=1;
+				console.log(fails);
 			}
 		}
-		
+
 		function onMouseMove(evt){
 			var item = evt.currentTarget;
 			if(item.drag){
@@ -1277,7 +1286,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onButtonUP(evt){
 			this.gotoAndStop(10)
 		}
@@ -1285,7 +1294,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_10 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.manta.on("mousedown", onMouseDown.bind(this));
 		this.manta.on("pressup", onMouseUp.bind(this));
 		this.manta.on("pressmove", onMouseMove.bind(this));
@@ -1302,8 +1311,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		this.btnNextJ2.on("mousedown" , onButtonUP.bind(this));
 		this.pinza.boton = this.btnNextJ2;
 		//this.manta.mensaje = this.mensaje;
-		
-		
+
+
 		function onMouseDown(evt){
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
@@ -1312,7 +1321,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			item.offset.y = pt.y - item.y;
 			item.drag = true;
 		}
-		
+
 		function onMouseUp(evt){
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.cmanta.x, item.cmanta.y, item.objective.cobjective01);
@@ -1323,10 +1332,11 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}
 			else{
 				//Porceso de equivocacion
-				alert("Error");
+				fails[4]+=1;
+				console.log(fails);
 			}
 		}
-		
+
 		function onMouseMove(evt){
 			var item = evt.currentTarget;
 			if(item.drag){
@@ -1335,7 +1345,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseDown2(evt){
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
@@ -1344,7 +1354,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			item.offset.y = pt.y - item.y;
 			item.drag = true;
 		}
-		
+
 		function onMouseUp2(evt){
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.cpinza.x, item.cpinza.y, item.objective.cobjective02);
@@ -1361,46 +1371,48 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				}
 				else{
 					//Porceso de equivocacion
-					alert("Error "  + nombre[0]);
+					fails[4]+=1;
+					console.log(fails);
 				}
 			}
 		}
-		
+
 		function onMouseMove2(evt){
 			var item = evt.currentTarget;
-			
+
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 				item.x = pt.x - item.offset.x;
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onButtonUP(evt){
+			alert("FIN");
 			this.gotoAndStop(11)
 		}
 	}
 	this.frame_11 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		var ix 
-		var iy 
-		
+		var ix
+		var iy
+
 		this.cobertor.on("mousedown" , onMouseDown.bind(this));
 		this.cobertor.on("pressmove" , onMouseMove.bind(this));
 		this.cobertor.on("pressup" , onMouseUp.bind(this));
 		this.cobertor.objective = this.objective1;
-		
+
 		this.manta.on("mousedown" , onMouseDown.bind(this));
 		this.manta.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.soporte.on("mousedown" , onMouseDown.bind(this));
 		this.soporte.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.pinza.on("mousedown" , onMouseDown.bind(this));
 		this.pinza.on("pressmove" , onMouseMove.bind(this));
 		//this.pinza.on("pressup" , onMouseUpWrong.bind(this));
-		
+
 		function onMouseMove(evt){
 			var item = evt.currentTarget;
 			if(item.drag){
@@ -1409,7 +1421,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
@@ -1422,7 +1434,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = item.y;
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
@@ -1431,7 +1443,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			item.offset.y = pt.y - item.y;
 			item.drag = true;
 		}
-		
+
 		function onMouseUpWrong(evt){
 			var item = evt.currentTarget;
 				item.x = ix
@@ -1452,24 +1464,24 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_12 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.cobertor1.on("mousedown" , onMouseDown.bind(this));
 		this.cobertor1.on("pressmove" , onMouseMove.bind(this));
 		this.cobertor1.on("pressup" , onMouseUp.bind(this));
 		this.cobertor1.objective = this.objective2;
-		
+
 		this.manta.on("mousedown" , onMouseDown.bind(this));
 		this.manta.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.soporte.on("mousedown" , onMouseDown.bind(this));
 		this.soporte.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.pinza.on("mousedown" , onMouseDown.bind(this));
 		this.pinza.on("pressmove" , onMouseMove.bind(this));
-		
+
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -1477,10 +1489,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
 			if(item.objective.box.hitTest(pt.x, pt.y)){
@@ -1493,13 +1505,13 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				console.log("Error")
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -1509,24 +1521,24 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_13 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.cobertor2.on("mousedown" , onMouseDown.bind(this));
 		this.cobertor2.on("pressmove" , onMouseMove.bind(this));
 		this.cobertor2.on("pressup" , onMouseUp.bind(this));
 		this.cobertor2.objective = this.objective3;
-		
+
 		this.manta.on("mousedown" , onMouseDown.bind(this));
 		this.manta.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.soporte.on("mousedown" , onMouseDown.bind(this));
 		this.soporte.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.pinza.on("mousedown" , onMouseDown.bind(this));
 		this.pinza.on("pressmove" , onMouseMove.bind(this));
-		
+
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -1534,10 +1546,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
 			if(item.objective.box.hitTest(pt.x, pt.y)){
@@ -1550,13 +1562,13 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				console.log("Error")
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -1566,24 +1578,24 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_14 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.soporte.on("mousedown" , onMouseDown.bind(this));
 		this.soporte.on("pressmove" , onMouseMove.bind(this));
 		this.soporte.on("pressup" , onMouseUp.bind(this));
 		this.soporte.objective = this.objective4;
-		
+
 		this.manta.on("mousedown" , onMouseDown.bind(this));
 		this.manta.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.soporte.on("mousedown" , onMouseDown.bind(this));
 		this.soporte.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.pinza.on("mousedown" , onMouseDown.bind(this));
 		this.pinza.on("pressmove" , onMouseMove.bind(this));
-		
+
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -1591,10 +1603,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
 			if(item.objective.box.hitTest(pt.x, pt.y)){
@@ -1607,13 +1619,13 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				console.log("Error")
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -1623,21 +1635,21 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_15 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.manta.on("mousedown" , onMouseDown.bind(this));
 		this.manta.on("pressmove" , onMouseMove.bind(this));
 		this.manta.on("pressup" , onMouseUp.bind(this));
 		this.manta.objective = this.objective5;
-		
+
 		this.soporte.on("mousedown" , onMouseDown.bind(this));
 		this.soporte.on("pressmove" , onMouseMove.bind(this));
-		
+
 		this.pinza.on("mousedown" , onMouseDown.bind(this));
 		this.pinza.on("pressmove" , onMouseMove.bind(this));
-		
+
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -1645,10 +1657,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
 			if(item.objective.box.hitTest(pt.x, pt.y)){
@@ -1661,13 +1673,13 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				console.log("Error")
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
@@ -1677,15 +1689,15 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.frame_16 = function() {
 		this.stop();
 		createjs.Touch.enable(stage);
-		
+
 		this.pinza.on("mousedown" , onMouseDown.bind(this));
 		this.pinza.on("pressmove" , onMouseMove.bind(this));
 		this.pinza.on("pressup" , onMouseUp.bind(this));
 		this.pinza.objective = this.objective6;
-		
+
 		function onMouseMove(evt){
 			console.log("pressmove");
-			
+
 			var item = evt.currentTarget;
 			if(item.drag){
 				var pt = item.parent.globalToLocal(evt.stageX , evt.stageY);
@@ -1693,10 +1705,10 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.y = pt.y - item.offset.y;
 			}
 		}
-		
+
 		function onMouseUp(evt){
 			console.log("pressup");
-			
+
 			var item = evt.currentTarget;
 			var pt = item.localToLocal(item.dot.x, item.dot.y , item.objective.box);
 			if(item.objective.box.hitTest(pt.x, pt.y)){
@@ -1709,13 +1721,13 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				console.log("Error")
 			}
 		}
-		
+
 		function onMouseDown(evt){
 			console.log("onmousedown");
-			
+
 			var item = evt.currentTarget;
 			item.offset = {x:0, y:0};
-			
+
 			var pt = item.parent.globalToLocal(evt.stageX, evt.stageY);
 			item.offset.x = pt.x - item.x;
 			item.offset.y = pt.y - item.y;
