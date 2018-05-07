@@ -1,5 +1,9 @@
+function VerificarFlag(){
+	
+	location.href ="endTestFailed.php";
+}
 (function (cjs, an) {
-
+var flag=true;
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
@@ -364,7 +368,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error");
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -417,7 +422,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -470,7 +476,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -530,7 +537,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				alert("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -579,7 +587,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				alert("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -632,7 +641,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -682,10 +692,12 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 				item.x = item.objective.x;
 				item.y = item.objective.y;
 				this.gotoAndStop(8);
+				//location.href ="endTestCorrect.php";
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				console.log("Error")
+				flag=false;
+				VerificarFlag();
 			}
 		}
 		
@@ -705,8 +717,9 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		this.stop();
 		this.btnNext.on("mousedown" , onMouseDown.bind(this));
 		function onMouseDown(evt){
-			console.log("saf")
-			this.gotoAndStop(5)
+			location.href ="endTestCorrect.php";
+			//console.log("saf")
+			//this.gotoAndStop(5)
 		}
 	}
 
