@@ -36,7 +36,7 @@ if($_POST){
 <meta name="authoring-tool" content="Adobe_Animate_CC">
 <!-- write your code here -->
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="VestimentaAvatar.js?1525395543432"></script>
+<script src="VestimentaAvatar.1.js?1525656171787"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 var usuario="<?php echo $Usuario?>";
