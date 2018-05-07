@@ -5,11 +5,11 @@
   $select_fecha="SELECT MAX(EXU_FECHA) AS FECHA_MAX FROM EVAXUSU WHERE TIE_CODIGO=1 AND USU_CODIGO=".$Usuario.";";
 
   if($_POST){
-    $f1=$_POST["fails1"];
-    $f2=$_POST["fails2"];
-    $f3=$_POST["fails3"];
-    $f4=$_POST["fails4"];
-    $f5=$_POST["fails5"];
+    $f1=$_POST["f1"];
+    $f2=$_POST["f2"];
+    $f3=$_POST["f3"];
+    $f4=$_POST["f4"];
+    $f5=$_POST["f5"];
     $ftotal=$f1+$f2+$f3+$f4+$f5;
     $resfecha = $mysqli->query($select_fecha);
     while($row = $resfecha->fetch_object()){
