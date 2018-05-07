@@ -1,15 +1,18 @@
 function practicaTerminada(f1,f2,f3,f4,f5){
-	$.post("practiceEnd.php",
-    {
-        fails1: f1,
-        fails2: f2,
-				fails3: f3,
-				fails4: f4,
-				fails5: f5
-    },
-    function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-    });
+	var http = new XMLHttpRequest();
+	var url = "practiceEnd.php";
+	var params = "f1="+f1+"&f2="+f2+"&f3="+f3+"&f4="+f4+"&f5="+f5;
+	http.open("POST", url, true);
+
+	//Send the proper header information along with the request
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+	http.onreadystatechange = function() {//Call a function when the state changes.
+	    if(http.readyState == 4 && http.status == 200) {
+	        alert(http.responseText);
+	    }
+	}
+	http.send(params);
 }
 (function (cjs, an) {
 
@@ -1403,7 +1406,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		function onButtonUP(evt){
 			alert("Práctica Finalizada");
 			practicaTerminada(fails[0],fails[1],fails[2],fails[3],fails[4]);
-			this.gotoAndStop(11)
+			//this.gotoAndStop(11)
 		}
 	}
 	this.frame_11 = function() {
