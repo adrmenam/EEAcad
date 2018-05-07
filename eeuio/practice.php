@@ -315,7 +315,10 @@ function handleComplete(evt,comp) {
     <div id="startDiv" style="padding-top:150px;">
       <form action="startPractice.php" method="post">
         <h2>Presiona INICIAR para comenzar con la práctica del Proceso 1</h2>
-        <button class="btn btn-success btn-lg" type="button" onclick="showDiv()">INICIAR</button>
+        <!--<input id="username" name="username" type="text" value="<?php $_SESSION['profile'] ?>"/>-->
+
+        <input hidden id="type" name="type" type="text" value="practica"/>
+        <button class="btn btn-success btn-lg" type="submit" onclick="showDiv()">INICIAR</button>
       </form>
     </div>
   </center>
