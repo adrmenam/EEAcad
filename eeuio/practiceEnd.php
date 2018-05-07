@@ -4,27 +4,27 @@
   $Usuario=$_SESSION["user_code"];
   $select_fecha="SELECT MAX(EXU_FECHA) AS FECHA_MAX FROM EVAXUSU WHERE TIE_CODIGO=1 AND USU_CODIGO=".$Usuario.";";
 
-  if($_POST){
-    $f1=$_POST["f1"];
-    $f2=$_POST["f2"];
-    $f3=$_POST["f3"];
-    $f4=$_POST["f4"];
-    $f5=$_POST["f5"];
+  if($_GET){
+    $f1=$_GET["f1"];
+    $f2=$_GET["f2"];
+    $f3=$_GET["f3"];
+    $f4=$_GET["f4"];
+    $f5=$_GET["f5"];
     $ftotal=$f1+$f2+$f3+$f4+$f5;
     $resfecha = $mysqli->query($select_fecha);
     while($row = $resfecha->fetch_object()){
         $fecha_max=$row->FECHA_MAX;
     }
 
-    
+
 
     $sql = "UPDATE EVAXUSU SET EXU_FIN=1, EXU_RESULTADO=".$ftotal." WHERE TIE_CODIGO=1 AND EVA_CODIGO=1 AND
     USU_CODIGO=".$Usuario." AND EXU_FECHA='".$fecha_max."';";
     //echo $sql;
       if ($mysqli->query($sql) === TRUE) {
-          echo "Práctica guardada exitosamente";
+          //console.log("Práctica guardada exitosamente");
       } else {
-          echo "Error: " . $sql . "<br>" . $mysqli->error;
+          "Error: " . $sql . "<br>" . $mysqli->error;
       }
 
 
@@ -32,7 +32,7 @@
       $sql1 = "INSERT INTO PASXUSU VALUES (1,1,".$Usuario.",'".$fecha_max."',1,".$f1.",null)";
 
         if ($mysqli->query($sql1) === TRUE) {
-            echo "Paso 1 guardado exitosamente";
+            //console.log("Paso 1 guardado exitosamente");
         } else {
             echo "Error: " . $sql1 . "<br>" . $mysqli->error;
         }
@@ -42,7 +42,7 @@
         $sql2 = "INSERT INTO PASXUSU VALUES (2,1,".$Usuario.",'".$fecha_max."',1,".$f2.",null)";
 
           if ($mysqli->query($sql2) === TRUE) {
-              echo "Paso 2 guardado exitosamente";
+              //echo "Paso 2 guardado exitosamente";
           } else {
               echo "Error: " . $sql2 . "<br>" . $mysqli->error;
           }
@@ -52,7 +52,7 @@
           $sql3 = "INSERT INTO PASXUSU VALUES (3,1,".$Usuario.",'".$fecha_max."',1,".$f3.",null)";
 
             if ($mysqli->query($sql3) === TRUE) {
-                echo "Paso 3 guardado exitosamente";
+                //echo "Paso 3 guardado exitosamente";
             } else {
                 echo "Error: " . $sql3 . "<br>" . $mysqli->error;
             }
@@ -62,7 +62,7 @@
             $sql4 = "INSERT INTO PASXUSU VALUES (4,1,".$Usuario.",'".$fecha_max."',1,".$f4.",null)";
 
               if ($mysqli->query($sql4) === TRUE) {
-                  echo "Paso 4 guardado exitosamente";
+                  //echo "Paso 4 guardado exitosamente";
               } else {
                   echo "Error: " . $sql4 . "<br>" . $mysqli->error;
               }
@@ -72,7 +72,7 @@
               $sql5 = "INSERT INTO PASXUSU VALUES (5,1,".$Usuario.",'".$fecha_max."',1,".$f5.",null)";
 
                 if ($mysqli->query($sql5) === TRUE) {
-                    echo "Paso 5 guardado exitosamente";
+                    //echo "Paso 5 guardado exitosamente";
                 } else {
                     echo "Error: " . $sql5 . "<br>" . $mysqli->error;
                 }
@@ -173,7 +173,7 @@ function handleComplete(evt,comp) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Mouldifi - A fully responsive, HTML5 based admin theme">
 <meta name="keywords" content="Responsive, HTML5, admin theme, business, professional, Mouldifi, web design, CSS3">
-<title>EEAcad | Examen</title>
+<title>EEAcad | Práctica</title>
 <!-- Site favicon -->
 <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
 <!-- /site favicon -->
@@ -252,8 +252,8 @@ function handleComplete(evt,comp) {
 			<li><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
       <?php
         if($_SESSION["profile"] === "Estudiante"){
-          echo '<li class="active"><a href="test.php"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
-          echo '<li ><a href="practice.php"><i class=" icon-graduation-cap"></i><span class="title">Práctica</span></a>';
+          echo '<li ><a href="test.php"><i class="icon-pencil"></i><span class="title">Evaluación</span></a>';
+          echo '<li class="active"><a href="practice.php"><i class=" icon-graduation-cap"></i><span class="title">Práctica</span></a>';
 		}
       ?>
 		</ul>
@@ -394,11 +394,13 @@ function handleComplete(evt,comp) {
 	<center>
     <div id="startDiv" style="padding-top:150px;">
 	 	<h2>Resumen de la práctica</h2>
-    <table>
+    <table class="table table-bordered">
+      <thead>
       <tr>
         <th>Número de Paso</th>
         <th># Errores</th>
       </tr>
+      </thead>
       <tr>
         <td>1</td>
         <td><?php echo "$f1" ?></td>
