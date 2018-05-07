@@ -1,3 +1,16 @@
+function practicaTerminada(f1,f2,f3,f4,f5){
+	$.post("practiceEnd.php",
+    {
+        fails1: f1,
+        fails2: f2,
+				fails3: f3,
+				fails4: f4,
+				fails5: f5
+    },
+    function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+}
 (function (cjs, an) {
 
 var p; // shortcut to reference prototypes
@@ -1388,7 +1401,8 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		}
 
 		function onButtonUP(evt){
-			alert("FIN");
+			alert("Práctica Finalizada");
+			practicaTerminada(fails[0],fails[1],fails[2],fails[3],fails[4]);
 			this.gotoAndStop(11)
 		}
 	}
