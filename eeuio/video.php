@@ -78,7 +78,7 @@
         
           echo "<li><a href='users.php'><i class='icon-users'></i><span class='title'>Usuarios</span></a>";
           
-    			echo     '<li><a href="evaluation.php"><span class="title">Resultados de Evaluaciones</span></a></li>';
+    			echo     '<li><a href="evaluation.php"><i class="icon-newspaper"></i>s<span class="title">Resultados de Evaluaciones</span></a></li>';
     		}
       ?>
 			<li><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
