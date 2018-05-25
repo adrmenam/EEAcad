@@ -81,17 +81,14 @@ $(document).ready(function(){
 		<ul id="side-nav" class="main-menu navbar-collapse collapse">
       <?php
         if ($_SESSION["profile"]==="Administrador"){
-          echo '<li class="has-sub"><a href="index.html"><i class="icon-gauge"></i><span class="title">Dashboard</span></a>';
+          /*echo '<li class="has-sub"><a href="index.html"><i class="icon-gauge"></i><span class="title">Dashboard</span></a>';
     			echo 	   '<ul class="nav collapse">';
     			echo         '<li><a href="index.html"><span class="title">Misc.</span></a></li>';
     			echo	    '</ul>';
-    			echo  '</li>';
+    			echo  '</li>';*/
           echo "<li class='active'><a href='users.php'><i class='icon-users'></i><span class='title'>Usuarios</span></a>";
-          echo '<li><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Evaluación</span></a> ';
-          echo '<li class="has-sub"><a href="panels.html"><i class="icon-newspaper"></i><span class="title">Evaluaciones</span></a>';
-    			echo   '<ul class="nav collapse">';
-    			echo     '<li><a href="evaluation.php"><span class="title">Resultados de Evaluaciones</span></a></li>';
-    			echo	 '</ul>';
+          
+    			echo     '<li><a href="evaluation.php"><i class="icon-newspaper"></i><span class="title">Resultados de Evaluaciones</span></a></li>';
     			echo '</li>';
         }
       ?>
@@ -102,6 +99,7 @@ $(document).ready(function(){
           echo '<li><a href="toolsMenu.php"><i class=" icon-graduation-cap"></i><span class="title">Práctica</span></a>';
         }
       ?>
+			<li ><a href="video.php"><i class="icon-video"></i><span class="title">Videos</span></a>
 		</ul>
 		<!-- /main navigation -->
   </div>

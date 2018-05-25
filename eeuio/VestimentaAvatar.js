@@ -872,7 +872,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			}else{
 				item.x = item.x;
 				item.y = item.y;
-				fails[0]+=1;
+				
 				console.log(fails);
 			}
 		}

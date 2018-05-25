@@ -753,14 +753,26 @@ DataTable.ext.buttons.pdfHtml5 = {
 				};
 			} ) );
 		}
-
-		if ( config.footer ) {
-			rows.push( $.map( data.footer, function ( d ) {
-				return {
-					text: typeof d === 'string' ? d : d+'',
-					style: 'tableFooter'
-				};
-			} ) );
+		var i=0;
+		if(config.exportOptions.flag==2)
+		{
+			if ( config.footer ) {
+				
+				
+				rows.push( $.map( data.footer, function ( d ) {
+					
+				 		return {
+				 			//text: typeof d === 'string' ? d : d+'',
+				 			//style: 'tableFooter' 
+							text: '____________________________\n'+config.exportOptions.tutor,
+				 			style: 'footer',
+				 			margin: [ 0, 100, 0, 12 ]
+				 		};
+						
+					
+				} ) );
+				
+			}
 		}
 
 		var doc = {
@@ -807,12 +819,13 @@ DataTable.ext.buttons.pdfHtml5 = {
 		if ( config.message ) {
 			if(config.exportOptions.flag==2)
 			{
+				
 				doc.content.unshift( {
 					text: 'Nombre: '+config.exportOptions._nombre+'\nFecha: '+config.exportOptions._fecha,
 					style: 'message',
 					margin: [ 0, 0, 0, 12 ]
 				} );
-
+				
 			}
 			
 		}

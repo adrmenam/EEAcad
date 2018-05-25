@@ -9,8 +9,13 @@
     $f2=$_GET["f2"];
     $f3=$_GET["f3"];
     $f4=$_GET["f4"];
-    $f5=$_GET["f5"];
-    $ftotal=$f1+$f2+$f3+$f4+$f5;
+		$f5=$_GET["f5"];
+		$f6=$_GET["f6"];
+    $f7=$_GET["f7"];
+    $f8=$_GET["f8"];
+    $f9=$_GET["f9"];
+    $f10=$_GET["f10"];
+    $ftotal=$f1+$f2+$f3+$f4+$f5+$f6+$f7+$f8+$f9+$f10;
     $resfecha = $mysqli->query($select_fecha);
     while($row = $resfecha->fetch_object()){
         $fecha_max=$row->FECHA_MAX;
@@ -75,7 +80,42 @@
                     //echo "Paso 5 guardado exitosamente";
                 } else {
                     echo "Error: " . $sql5 . "<br>" . $mysqli->error;
-                }
+								}
+								
+									$sql6 = "INSERT INTO PASXUSU VALUES (6,1,".$Usuario.",'".$fecha_max."',1,".$f6.",null)";
+										if ($mysqli->query($sql6) === TRUE) {
+												//echo "Paso 5 guardado exitosamente";
+										} else {
+												echo "Error: " . $sql6 . "<br>" . $mysqli->error;
+										}
+
+										$sql7 = "INSERT INTO PASXUSU VALUES (7,1,".$Usuario.",'".$fecha_max."',1,".$f7.",null)";
+											if ($mysqli->query($sql7) === TRUE) {
+													//echo "Paso 5 guardado exitosamente";
+											} else {
+													echo "Error: " . $sql7 . "<br>" . $mysqli->error;
+											}
+
+											$sql8 = "INSERT INTO PASXUSU VALUES (8,1,".$Usuario.",'".$fecha_max."',1,".$f8.",null)";
+												if ($mysqli->query($sql8) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql8 . "<br>" . $mysqli->error;
+												}
+
+												$sql9 = "INSERT INTO PASXUSU VALUES (9,1,".$Usuario.",'".$fecha_max."',1,".$f9.",null)";
+												if ($mysqli->query($sql9) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql9 . "<br>" . $mysqli->error;
+												}
+
+												$sql10 = "INSERT INTO PASXUSU VALUES (10,1,".$Usuario.",'".$fecha_max."',1,".$f10.",null)";
+												if ($mysqli->query($sql10) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql10 . "<br>" . $mysqli->error;
+												}
 
                 $mysqli->close();
   }
@@ -420,6 +460,26 @@ function handleComplete(evt,comp) {
       <tr>
         <td>5</td>
         <td><?php echo "$f5" ?></td>
+			</tr>
+			<tr>
+        <td>6</td>
+        <td><?php echo "$f6" ?></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><?php echo "$f7" ?></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><?php echo "$f8" ?></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><?php echo "$f9" ?></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><?php echo "$f10" ?></td>
       </tr>
     </table>
 
