@@ -3,6 +3,7 @@
   include 'dbconnection.php';
   $Usuario=$_SESSION["user_code"];
 ?>
+
 <!DOCTYPE html>
 <!-- write your code here -->
 <html lang="en">
@@ -49,7 +50,7 @@
 <![endif]-->
 
 </head>
-<body onload="init();" style="margin:0px;">
+<body >
 <!-- Page container -->
 <div class="page-container">
 
@@ -77,12 +78,9 @@
         
           echo "<li><a href='users.php'><i class='icon-users'></i><span class='title'>Usuarios</span></a>";
           echo '<li><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Evaluación</span></a> ';
-          echo '<li class="has-sub"><a href="panels.html"><i class="icon-newspaper"></i><span class="title">Evaluaciones</span></a>';
-    			echo   '<ul class="nav collapse">';
+         
     			echo     '<li><a href="evaluation.php"><span class="title">Resultados de Evaluaciones</span></a></li>';
-    			echo	 '</ul>';
-    			echo '</li>';
-        }
+    		}
       ?>
 			<li><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Menú de Herramientas</span></a>
             <li class="active"><a href="video.php"><i class="icon-video"></i><span class="title">Videos</span></a>
@@ -126,8 +124,9 @@
 			<!-- /user info -->
 	
 				</div>
-      
-    </div>
+				</div>
+
+    
 	<!-- /main header -->
     <center><h1>Seccionamiento de Red Trifásica</h1>
 	<!-- <video width="800" height="600" controls>
@@ -135,7 +134,8 @@
 		<!-- Your browser does not support the video tag.
     </video>  -->
 	<iframe width="800" height="600" src="https://www.youtube.com/embed/tNpS324sjJ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </center>
+		</center>
+		</div>
 </body>
 
 </html>
