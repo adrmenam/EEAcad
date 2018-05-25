@@ -194,6 +194,7 @@ if($_GET){
 						tutor: tutor,
 						flag: 2
 					}
+					
 				},
 				'colvis'
 			]

@@ -101,6 +101,7 @@ DataTable.ext.buttons.print = {
 
 		if ( config.footer ) {
 			html += '<tfoot>'+ addRow( data.footer, 'th' ) +'</tfoot>';
+			//html += '<tfoot>'+ '<th>'+data.footer+'</th>' +'</tfoot>';
 		}
 
 		// Open a new window for the printable table

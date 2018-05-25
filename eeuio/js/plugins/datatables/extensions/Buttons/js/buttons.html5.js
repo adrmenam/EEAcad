@@ -734,7 +734,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 		var newLine = _newLine( config );
 		var data = dt.buttons.exportData( config.exportOptions );
 		var rows = [];
-
+		var column =[];
 		if ( config.header ) {
 			rows.push( $.map( data.header, function ( d ) {
 				return {
@@ -759,18 +759,16 @@ DataTable.ext.buttons.pdfHtml5 = {
 			if ( config.footer ) {
 				
 				
-				rows.push( $.map( data.footer, function ( d ) {
+				// rows.push( $.map( data.footer, function ( d ) {
 					
-				 		return {
-				 			//text: typeof d === 'string' ? d : d+'',
-				 			//style: 'tableFooter' 
-							text: '____________________________\n'+config.exportOptions.tutor,
-				 			style: 'footer',
-				 			margin: [ 0, 100, 0, 12 ]
-				 		};
-						
+				//  		return {
+				 			
+				// 			text: '____________________________\n'+config.exportOptions.tutor,
+				//  			//style: 'footer',
+				//  			margin: [ 0, 100, 0, 12 ]
+				//  		};						
 					
-				} ) );
+				// } ) );
 				
 			}
 		}
@@ -785,8 +783,16 @@ DataTable.ext.buttons.pdfHtml5 = {
 						body: rows
 					},
 					layout: 'noBorders'
-				}
+				},
+				
 			],
+			
+				footer: 
+				{
+					text: '____________________________\n\nInstructor:\n'+config.exportOptions.tutor,
+					margin: [ 35, -70, 0, 0]
+				}
+			,
 			styles: {
 				tableHeader: {
 					bold: true,
@@ -882,13 +888,13 @@ DataTable.ext.buttons.pdfHtml5 = {
 
 	header: true,
 
-	footer: false,
+	footer: true,
 
 	message: '*',
 
 	customize: null,
 
-	download: 'download'
+	download: 's'
 };
 
 
