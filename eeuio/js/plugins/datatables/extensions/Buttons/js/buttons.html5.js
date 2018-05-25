@@ -734,7 +734,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 		var newLine = _newLine( config );
 		var data = dt.buttons.exportData( config.exportOptions );
 		var rows = [];
-		var column =[];
+		var footer;
 		if ( config.header ) {
 			rows.push( $.map( data.header, function ( d ) {
 				return {
@@ -772,7 +772,11 @@ DataTable.ext.buttons.pdfHtml5 = {
 				
 			}
 		}
-
+		if(config.exportOptions.flag==2){
+			footer='____________________________\n\nInstructor:\n'+config.exportOptions.tutor;
+		}else{
+			footer='';
+		}
 		var doc = {
 			pageSize: config.pageSize,
 			pageOrientation: config.orientation,
@@ -789,7 +793,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 			
 				footer: 
 				{
-					text: '____________________________\n\nInstructor:\n'+config.exportOptions.tutor,
+					text: footer,
 					margin: [ 35, -70, 0, 0]
 				}
 			,
