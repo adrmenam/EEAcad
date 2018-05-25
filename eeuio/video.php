@@ -77,8 +77,7 @@
         if ($_SESSION["profile"]==="Administrador"){
         
           echo "<li><a href='users.php'><i class='icon-users'></i><span class='title'>Usuarios</span></a>";
-          echo '<li><a href="toolsMenu.php"><i class="icon-tools"></i><span class="title">Evaluación</span></a> ';
-         
+          
     			echo     '<li><a href="evaluation.php"><span class="title">Resultados de Evaluaciones</span></a></li>';
     		}
       ?>
