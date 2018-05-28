@@ -14,8 +14,18 @@
     $f7=$_GET["f7"];
     $f8=$_GET["f8"];
     $f9=$_GET["f9"];
-    $f10=$_GET["f10"];
-    $ftotal=$f1+$f2+$f3+$f4+$f5+$f6+$f7+$f8+$f9+$f10;
+		$f10=$_GET["f10"];
+		$f11=$_GET["f1"];
+    $f12=$_GET["f2"];
+    $f13=$_GET["f3"];
+    $f14=$_GET["f4"];
+		$f15=$_GET["f5"];
+		$f16=$_GET["f6"];
+    $f17=$_GET["f7"];
+    $f18=$_GET["f8"];
+    $f19=$_GET["f9"];
+    $f20=$_GET["f10"];
+    $ftotal=$f1+$f2+$f3+$f4+$f5+$f6+$f7+$f8+$f9+$f10+$f11+$f12+$f13+$f14+$f15+$f16+$f17+$f18+$f19+$f20;
     $resfecha = $mysqli->query($select_fecha);
     while($row = $resfecha->fetch_object()){
         $fecha_max=$row->FECHA_MAX;
@@ -115,6 +125,94 @@
 														//echo "Paso 5 guardado exitosamente";
 												} else {
 														echo "Error: " . $sql10 . "<br>" . $mysqli->error;
+												}
+
+
+												$sql11 = "INSERT INTO PASXUSU VALUES (11,1,".$Usuario.",'".$fecha_max."',1,".$f11.",null)";
+												if ($mysqli->query($sql11) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql11 . "<br>" . $mysqli->error;
+												}
+
+												$sql12 = "INSERT INTO PASXUSU VALUES (12,1,".$Usuario.",'".$fecha_max."',1,".$f12.",null)";
+												if ($mysqli->query($sql12) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql12 . "<br>" . $mysqli->error;
+												}
+
+
+												$sql13 = "INSERT INTO PASXUSU VALUES (13,1,".$Usuario.",'".$fecha_max."',1,".$f13.",null)";
+												if ($mysqli->query($sql13) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql10 . "<br>" . $mysqli->error;
+												}
+
+
+												$sql14 = "INSERT INTO PASXUSU VALUES (14,1,".$Usuario.",'".$fecha_max."',1,".$f14.",null)";
+												if ($mysqli->query($sql14) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql14 . "<br>" . $mysqli->error;
+												}
+
+
+
+												$sql15= "INSERT INTO PASXUSU VALUES (15,1,".$Usuario.",'".$fecha_max."',1,".$f15.",null)";
+												if ($mysqli->query($sql15) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql15 . "<br>" . $mysqli->error;
+												}
+
+
+
+												$sql16 = "INSERT INTO PASXUSU VALUES (16,1,".$Usuario.",'".$fecha_max."',1,".$f16.",null)";
+												if ($mysqli->query($sql16) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql16 . "<br>" . $mysqli->error;
+												}
+
+
+
+
+												$sql17 = "INSERT INTO PASXUSU VALUES (17,1,".$Usuario.",'".$fecha_max."',1,".$f17.",null)";
+												if ($mysqli->query($sql17) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql17 . "<br>" . $mysqli->error;
+												}
+
+
+
+
+												$sql18 = "INSERT INTO PASXUSU VALUES (18,1,".$Usuario.",'".$fecha_max."',1,".$f18.",null)";
+												if ($mysqli->query($sql18) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql18 . "<br>" . $mysqli->error;
+												}
+
+
+
+
+												$sql19 = "INSERT INTO PASXUSU VALUES (19,1,".$Usuario.",'".$fecha_max."',1,".$f19.",null)";
+												if ($mysqli->query($sql19) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql19 . "<br>" . $mysqli->error;
+												}
+
+
+
+												$sql20 = "INSERT INTO PASXUSU VALUES (20,1,".$Usuario.",'".$fecha_max."',1,".$f20.",null)";
+												if ($mysqli->query($sql20) === TRUE) {
+														//echo "Paso 5 guardado exitosamente";
+												} else {
+														echo "Error: " . $sql20 . "<br>" . $mysqli->error;
 												}
 
                 $mysqli->close();
@@ -480,7 +578,48 @@ function handleComplete(evt,comp) {
       <tr>
         <td>10</td>
         <td><?php echo "$f10" ?></td>
+			</tr>
+			<tr>
+        <td>11</td>
+        <td><?php echo "$f11" ?></td>
       </tr>
+      <tr>
+        <td>12</td>
+        <td><?php echo "$f12" ?></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td><?php echo "$f13" ?></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td><?php echo "$f14" ?></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td><?php echo "$f15" ?></td>
+			</tr>
+			<tr>
+        <td>16</td>
+        <td><?php echo "$f16" ?></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td><?php echo "$f17" ?></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td><?php echo "$f18" ?></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td><?php echo "$f19" ?></td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td><?php echo "$f20" ?></td>
+      </tr>
+
     </table>
 
 
