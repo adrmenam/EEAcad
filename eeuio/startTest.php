@@ -6,7 +6,7 @@ include 'dbconnection.php';
 $Usuario=$_SESSION["user_code"];
 date_default_timezone_set('America/Guayaquil');
 $date = date('Y-m-d H:i:s', time());
-echo $date;
+//echo $date;
 $sql = "INSERT INTO EVAXUSU (EXU_FECHA, EVA_CODIGO, USU_CODIGO,TIE_CODIGO, EXU_RESULTADO, EXU_OBSERVACION, EXU_FIN)
 VALUES ('".$date."',1,".$Usuario.",2,0,'Reprobado',0)";
 
@@ -36,7 +36,7 @@ if($_POST){
 <meta name="authoring-tool" content="Adobe_Animate_CC">
 <!-- write your code here -->
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="VestimentaAvatar_F_02.js?1527527728873"></script>
+<script src="VestimentaAvatar_T.js?1527656264483"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 var usuario="<?php echo $Usuario?>";

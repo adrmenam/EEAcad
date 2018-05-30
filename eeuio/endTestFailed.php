@@ -12,7 +12,7 @@
   USU_CODIGO=".$Usuario." AND EXU_FECHA='".$fecha_max."';";
   //echo $sql;
     if ($mysqli->query($sql) === TRUE) {
-        echo "Sii";
+        //echo "Sii";
     } else {
         echo "Error: " . $sql . "<br>" . $mysqli->error;
     }

@@ -4747,8 +4747,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/VestimentaAvatar_atlas_.png?1527527728582", id:"VestimentaAvatar_atlas_"},
-		{src:"images/VestimentaAvatar_atlas_2.png?1527527728584", id:"VestimentaAvatar_atlas_2"}
+		{src:"images/VestimentaAvatar_atlas_T.png?1527527728582", id:"VestimentaAvatar_atlas_"},
+		{src:"images/VestimentaAvatar_atlas_2_T.png?1527527728584", id:"VestimentaAvatar_atlas_2"}
 	],
 	preloads: []
 };
