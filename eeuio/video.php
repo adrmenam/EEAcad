@@ -128,11 +128,11 @@
     
 	<!-- /main header -->
     <center><h1>Seccionamiento de Red Trifásica</h1>
-	<!-- <video width="800" height="600" controls>
+	<video width="800" height="600" controls>
         <!-- <source src="resources/Videos/Seccionamiento_Red_Trifásica_MV.mov" type="video/mp4"> -->
 		<!-- Your browser does not support the video tag.
-    </video>  -->
-	<iframe width="800" height="600" src="https://www.youtube.com/embed/tNpS324sjJ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </video> 
+	<!-- <iframe width="800" height="600" src="https://www.youtube.com/embed/tNpS324sjJ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 		</center>
 		</div>
 </body>
