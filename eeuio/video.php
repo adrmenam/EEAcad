@@ -104,7 +104,7 @@
 	
 			<!-- User info -->
 					<ul class="user-info pull-left">
-						<li class="profile-info dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false"> <img width="44" class="img-circle avatar" alt="" src="images/man-3.jpg"><?php echo  $_SESSION["username"] ?> <span class="caret"></span></a>
+						<li class="profile-info dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false"> <?php echo  $_SESSION["username"] ?> <span class="caret"></span></a>
 	
 				<!-- User action menu -->
 							<ul class="dropdown-menu">
@@ -129,8 +129,8 @@
 	<!-- /main header -->
     <center><h1>Seccionamiento de Red Trifásica</h1>
 	<video width="800" height="600" controls>
-        <!-- <source src="resources/Videos/Seccionamiento_Red_Trifásica_MV.mov" type="video/mp4"> -->
-		<!-- Your browser does not support the video tag.
+        <source src="resources/Videos/FINAL_Seccionamiento Red Trifásica MV.mov" type="video/mp4">
+		
     </video> 
 	<!-- <iframe width="800" height="600" src="https://www.youtube.com/embed/tNpS324sjJ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 		</center>

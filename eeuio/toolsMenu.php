@@ -107,7 +107,7 @@
 
 		<!-- User info -->
         <ul class="user-info pull-left">
-          <li class="profile-info dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false"> <img width="44" class="img-circle avatar" alt="" src="images/man-3.jpg"><?php echo  $_SESSION["username"] ?> <span class="caret"></span></a>
+          <li class="profile-info dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false"> <?php echo  $_SESSION["username"] ?> <span class="caret"></span></a>
 
 			<!-- User action menu -->
             <ul class="dropdown-menu">

@@ -13,10 +13,13 @@ if($_POST){
   if ($mysqli->query($sql) === TRUE) {
       redirect('practiceCanvas.php');
   } else {
+      redirect('login.php');
       echo "Error: " . $sql . "<br>" . $mysqli->error;
   }
 
   $mysqli->close();
+}else{
+    redirect('login.php');
 }
 
 ?>

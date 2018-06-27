@@ -1,8 +1,12 @@
 <?php
-  $server='35.185.114.87';
-  $user='admin';
-  $password='EmpEleQuito';
-  $db='EmpresaElectrica2';
+  // $server='35.185.114.87';
+  // $user='admin';
+  // $password='EmpEleQuito';
+  // $db='EmpresaElectrica2';
+  $server='localhost';
+  $user='root';
+  $password='Inrikingjc1107.';
+  $db='empresaelectrica2';
 
   $mysqli = new mysqli($server, $user, $password, $db);
   $mysqli->set_charset("utf8");
