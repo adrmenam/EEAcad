@@ -3,10 +3,16 @@
   // $user='admin';
   // $password='EmpEleQuito';
   // $db='EmpresaElectrica2';
-  $server='localhost';
-  $user='root';
-  $password='Inrikingjc1107.';
-  $db='empresaelectrica2';
+  // $server='localhost';
+  // $user='root';
+  // $password='Inrikingjc1107.';
+  // $db='empresaelectrica2';
+
+  $server='146.148.97.250';
+  $user='admin';
+  $password='eeq_kay_2018';
+  $db='EmpresaElectrica2';
+
 
   $mysqli = new mysqli($server, $user, $password, $db);
   $mysqli->set_charset("utf8");
