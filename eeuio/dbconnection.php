@@ -16,7 +16,12 @@
 
   $mysqli = new mysqli($server, $user, $password, $db);
   $mysqli->set_charset("utf8");
-
+  if (!$enlace) {
+    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
+    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+  }
 
 
   //consultas
