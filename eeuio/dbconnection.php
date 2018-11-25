@@ -8,9 +8,9 @@
   // $password='Inrikingjc1107.';
   // $db='empresaelectrica2';
 
-  $server='146.148.97.250';
+  $server='35.225.28.198';
   $user='admin';
-  $password='eeq_kay_2018';
+  $password='BDeeq2018!';
   $db='EmpresaElectrica2';
 
 
